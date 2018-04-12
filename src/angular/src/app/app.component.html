@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-1">
+  <a class="navbar-brand py-0 px-3" href="#" style=""><img height="50px" src="assets/img/logo-ngrx.png"/></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+          aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">NgRx Data / SpringBoot</a>
+      </li>
+
+    </ul>
+    <div class="float-right pr-3">
+      <span class="navbar-text text-white">
+
+        <span class="badge badge-secondary">
+          <span>Alain Boudard</span>
+        </span>
+        <span class="small"> | <a href="#">Déconnexion</a></span>
+    </span>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-3">
+      <h5>Add a Todo : </h5>
+      <form (submit)="addTodo($event, newTodo.value)">
+        <div class="form-group">
+          <label for="title">Todo title</label>
+          <input type="text" class="form-control" id="title" #newTodo required aria-describedby="titleHelp" placeholder="Enter todo title">
+          <small id="titleHelp" class="form-text text-muted">This is the sound of C.</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Welcome to {{ title }}</h5>
+          <p class="card-text">
+            Todo List with SpringBoot backend and Rest API, NgRx Data store solution for CRUD operations
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let todo of todos$ | async" class="list-group-item"><span [innerText]="todo.title"></span> <button class="float-right btn btn-sm btn-danger" (click)="deleteTodo(todo.id)">suppr</button></li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<footer class="footer">
+  <div class="container">
+    &copy; <span [innerText]="yearNow"></span>&nbsp;<span> Coco </span>
+    <span class="float-right" [innerText]="appVersion"></span>
+  </div>
+</footer>
+
+
