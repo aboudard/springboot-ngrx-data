@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "dbmock": "json-server --watch src/server.json --port 3004 --routes src/routes.json"
+    "dbmock": "json-server --watch server.json --port 3004 --routes routes.json"
   },
   "private": true,
   "dependencies": {

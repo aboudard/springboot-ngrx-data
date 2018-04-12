@@ -40,6 +40,24 @@ or
 mvn spring-boot:start
 ```
 
+Open your localhost http://localhost:8080
+
+## Alternative with json-server
+If you want to use the json server mock database just follow these instructions :
+- Install json-server
+```bash
+npm install -g json-server
+```
+
+- Kill the Spring server we will use the Angular Cli
+- Run the commands :
+```bash
+cd src/angular
+npm run start
+npm run dbmock
+```
+
+Open your localhost http://localhost:4200
+
 ## Follow the original instructions about NgRx Data
 Check [the original instructions](https://github.com/johnpapa/angular-ngrx-data/blob/master/README.md) about monitoring with Redux Devtools and other details
-
