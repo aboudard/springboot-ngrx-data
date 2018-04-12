@@ -13,11 +13,11 @@
       "title": "Java avec les pingouins"
     },
     {
-      "title": "Test outside",
+      "title": "Spring Boot for my crocodile",
       "id": 3
     },
     {
-      "title": "Test outside todo",
+      "title": "Beer is not my first name",
       "id": 4
     },
     {
@@ -25,15 +25,11 @@
       "id": 5
     },
     {
-      "title": "pouf",
-      "id": 6
-    },
-    {
-      "title": "Popo poopopopo",
+      "title": "That's barealy a Todo List right ?",
       "id": 7
     },
     {
-      "title": "ytyty yty tyt",
+      "title": "Do something about it",
       "id": 8
     }
   ]
