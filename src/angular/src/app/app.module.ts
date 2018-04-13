@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { AppStoreModule } from './store/app-store.module';
 import { ServicesModule } from './services/services.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { CounterComponent } from './counter/counter.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CounterComponent
   ],
   imports: [
     HttpClientModule,
