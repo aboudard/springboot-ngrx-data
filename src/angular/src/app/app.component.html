@@ -50,7 +50,14 @@
           </p>
         </div>
         <ul class="list-group list-group-flush">
-          <li *ngFor="let todo of todos$ | async" class="list-group-item"><span [innerText]="todo.title"></span> <button class="float-right btn btn-sm btn-danger" (click)="deleteTodo(todo.id)">suppr</button></li>
+          <li *ngFor="let todo of todos$ | async; let i = index" class="list-group-item"><span [innerText]="todo.title"></span>
+            <button class="float-right btn btn-sm btn-danger" (click)="deleteTodo(todo.id)">suppr</button>
+            <button class="float-right btn btn-sm mr-2" [ngClass]="{'btn-secondary': !todo.active, 'btn-info': todo.active}" (click)="updateTodo(todo)">
+              <span *ngIf="todo.active"><i class="far fa-check-square fa-lg"></i></span>
+              <span *ngIf="!todo.active"><i class="far fa-square fa-lg"></i></span>
+            </button>
+
+          </li>
 
         </ul>
       </div>

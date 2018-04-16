@@ -1,2 +1,9 @@
 @import "variables";
 @import "~bootstrap/scss/bootstrap";
+/**
+Font Awesome 5
+ */
+$fa-font-path: "~@fortawesome/fontawesome-free-webfonts/webfonts";
+@import "~@fortawesome/fontawesome-free-webfonts/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free-webfonts/scss/fa-solid.scss";
+@import "~@fortawesome/fontawesome-free-webfonts/scss/fa-regular.scss";

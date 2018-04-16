@@ -7,6 +7,7 @@ import { AppStoreModule } from './store/app-store.module';
 import { ServicesModule } from './services/services.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CounterComponent } from './counter/counter.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -14,6 +15,8 @@ import { CounterComponent } from './counter/counter.component';
     CounterComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserModule,
     AppStoreModule,

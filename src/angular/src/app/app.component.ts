@@ -33,10 +33,14 @@ export class AppComponent implements OnInit {
 
   addTodo(event: Event, todoTitre: string) {
     event.preventDefault();
-    this.todosService.add({title: todoTitre});
+    this.todosService.add({title: todoTitre, active: true});
   }
   deleteTodo(todoId: number) {
     this.todosService.delete(todoId);
   }
 
+  updateTodo(todo: Todo) {
+    todo.active = !todo.active;
+    this.todosService.update(todo);
+  }
 }

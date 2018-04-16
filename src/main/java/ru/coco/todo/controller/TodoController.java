@@ -1,18 +1,16 @@
 package ru.coco.todo.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.coco.todo.model.Todo;
 import ru.coco.todo.repository.TodoRepository;
 
-import java.util.Collection;
 import java.util.Optional;
 
 /**
  * Created by a10282 on 11/04/2018.
  */
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/")
 public class TodoController {
 
     private TodoRepository todoRepository;
@@ -42,8 +40,9 @@ public class TodoController {
         return todoRepository.save(todo);
     }
 
-    @PutMapping(value = "/todo")
-    public Todo putTodo(@RequestBody Todo todo) {
+    @PutMapping(value = "/todo/{id}")
+    public Todo putTodo(@PathVariable long id, @RequestBody Todo todo) {
+        todo.setId(id);
         return todoRepository.save(todo);
     }
 }
