@@ -8,11 +8,13 @@ import { ServicesModule } from './services/services.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CounterComponent } from './counter/counter.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { CountervalidComponent } from './counter/countervalid/countervalid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CounterComponent
+    CounterComponent,
+    CountervalidComponent
   ],
   imports: [
     FormsModule,

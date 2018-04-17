@@ -35,10 +35,11 @@
           <input type="text" class="form-control" id="title" #newTodo required aria-describedby="titleHelp" placeholder="Enter todo title">
           <small id="titleHelp" class="form-text text-muted">This is the sound of C.</small>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary"><i class="fas fa-check"></i> Submit</button>
       </form>
       <hr>
       <app-counter></app-counter>
+      <app-countervalid></app-countervalid>
     </div>
 
     <div class="col">
@@ -51,7 +52,9 @@
         </div>
         <ul class="list-group list-group-flush">
           <li *ngFor="let todo of todos$ | async; let i = index" class="list-group-item"><span [innerText]="todo.title"></span>
-            <button class="float-right btn btn-sm btn-danger" (click)="deleteTodo(todo.id)">suppr</button>
+            <button class="float-right btn btn-sm btn-danger" (click)="deleteTodo(todo.id)">
+              <i class="fas fa-trash"></i>
+            </button>
             <button class="float-right btn btn-sm mr-2" [ngClass]="{'btn-secondary': !todo.active, 'btn-info': todo.active}" (click)="updateTodo(todo)">
               <span *ngIf="todo.active"><i class="far fa-check-square fa-lg"></i></span>
               <span *ngIf="!todo.active"><i class="far fa-square fa-lg"></i></span>
