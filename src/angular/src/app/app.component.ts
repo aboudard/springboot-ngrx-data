@@ -1,8 +1,10 @@
 import {OnInit} from '@angular/core/src/metadata/lifecycle_hooks';
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import {Component, ChangeDetectionStrategy, ViewContainerRef} from '@angular/core';
 import { TodosService } from './services/todos.service';
 import { Todo } from './dto/todo';
 import { Observable } from 'rxjs/Observable';
+import {ToastService} from "./services/toast.service";
+import {ToastsManager} from "ng2-toastr";
 
 @Component({
   selector: 'app-root',
@@ -18,8 +20,14 @@ export class AppComponent implements OnInit {
   yearNow: string;
   appVersion: string;
 
-  constructor(private todosService: TodosService) {
+  constructor(
+    private todosService: TodosService,
+    private toastService: ToastService,
+    private toastr: ToastsManager,
+    vcr: ViewContainerRef
+  ) {
     this.todos$ = todosService.entities$;
+    this.toastr.setRootViewContainerRef(vcr);
   }
   getTodos() {
     this.todosService.getAll();
