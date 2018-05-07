@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
   todos$: Observable<Todo[]>;
   yearNow: string;
   appVersion: string;
+  user = { name: 'Bill' };
 
   constructor(
     private todosService: TodosService,
@@ -34,6 +35,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.yearNow = new Date().getFullYear().toString();
     this.appVersion = 'V X.X.X';
     this.getTodos();
@@ -50,5 +52,13 @@ export class AppComponent implements OnInit {
   updateTodo(todo: Todo) {
     todo.active = !todo.active;
     this.todosService.update(todo);
+  }
+
+  onClick() {
+    this.user = { name : 'Alain' };
+  }
+
+  onNewValue(val) {
+    console.log(val);
   }
 }

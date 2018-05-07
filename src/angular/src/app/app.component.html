@@ -32,7 +32,9 @@
       <form (submit)="addTodo($event, newTodo.value)">
         <div class="form-group">
           <label for="title">Todo title</label>
-          <input type="text" class="form-control" id="title" #newTodo required aria-describedby="titleHelp" placeholder="Enter todo title">
+          <app-fa-input [icon]="'burn'" class="form-control" (value)="onNewValue($event)">
+            <input appInputRef type="text" placeholder="Enter todo title" id="title" #newTodo required aria-describedby="titleHelp">
+          </app-fa-input>
           <small id="titleHelp" class="form-text text-muted">This is the sound of C.</small>
         </div>
         <button type="submit" class="btn btn-primary"><i class="fas fa-check"></i> Submit</button>
@@ -64,6 +66,12 @@
 
         </ul>
       </div>
+
+      <div class="alert alert-info mt-2">
+        <button class="btn btn-outline-primary" (click)="onClick()">Trigger change detection</button>
+      </div>
+
+      <app-hello [user]="user"></app-hello>
     </div>
   </div>
 

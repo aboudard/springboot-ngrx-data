@@ -11,6 +11,9 @@ import { CounterComponent } from './counter/counter.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CountervalidComponent } from './counter/countervalid/countervalid.component';
 import {NoopAnimationsModule} from "@angular/platform-browser/animations";
+import {CompModule} from "./comp/comp.module";
+import {DirectivesModule} from "./directives/directives.module";
+
 
 @NgModule({
   declarations: [
@@ -19,6 +22,8 @@ import {NoopAnimationsModule} from "@angular/platform-browser/animations";
     CountervalidComponent
   ],
   imports: [
+    DirectivesModule,
+    CompModule,
     NoopAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
