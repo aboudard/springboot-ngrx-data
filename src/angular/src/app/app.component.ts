@@ -4,7 +4,6 @@ import { TodosService } from './services/todos.service';
 import { Todo } from './dto/todo';
 import { Observable } from 'rxjs/Observable';
 import {ToastService} from "./services/toast.service";
-import {ToastsManager} from "ng2-toastr";
 
 @Component({
   selector: 'app-root',
@@ -23,19 +22,15 @@ export class AppComponent implements OnInit {
 
   constructor(
     private todosService: TodosService,
-    private toastService: ToastService,
-    private toastr: ToastsManager,
-    vcr: ViewContainerRef
+    private toastService: ToastService
   ) {
     this.todos$ = todosService.entities$;
-    this.toastr.setRootViewContainerRef(vcr);
   }
   getTodos() {
     this.todosService.getAll();
   }
 
   ngOnInit() {
-
     this.yearNow = new Date().getFullYear().toString();
     this.appVersion = 'V X.X.X';
     this.getTodos();

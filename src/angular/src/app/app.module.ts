@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import {ToastModule} from 'ng2-toastr/ng2-toastr';
 
 import { AppComponent } from './app.component';
 import { AppStoreModule } from './store/app-store.module';
@@ -10,9 +9,10 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CounterComponent } from './counter/counter.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CountervalidComponent } from './counter/countervalid/countervalid.component';
-import {NoopAnimationsModule} from "@angular/platform-browser/animations";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CompModule} from "./comp/comp.module";
 import {DirectivesModule} from "./directives/directives.module";
+import {ToastrModule} from "ngx-toastr";
 
 
 @NgModule({
@@ -24,7 +24,6 @@ import {DirectivesModule} from "./directives/directives.module";
   imports: [
     DirectivesModule,
     CompModule,
-    NoopAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -32,7 +31,8 @@ import {DirectivesModule} from "./directives/directives.module";
     AppStoreModule,
     ServicesModule,
     NgbModule.forRoot(),
-    ToastModule.forRoot()
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]
