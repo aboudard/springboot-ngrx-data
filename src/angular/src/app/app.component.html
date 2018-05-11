@@ -1,41 +1,23 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-1">
-  <a class="navbar-brand py-0 px-3" href="#" style=""><img height="50px" src="assets/img/logo-ngrx.png"/></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-          aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">NgRx Data / SpringBoot</a>
-      </li>
-
-    </ul>
-    <div class="float-right pr-3">
-      <span class="navbar-text text-white">
-
-        <span class="badge badge-secondary">
-          <span>Alain Boudard</span>
-        </span>
-        <span class="small"> | <a href="#">Déconnexion</a></span>
-    </span>
-    </div>
-  </div>
-</nav>
-
+<app-navbar></app-navbar>
 <div class="container">
 
   <div class="row">
     <div class="col-3">
       <h5>Add a Todo : </h5>
-      <form (submit)="addTodo($event, newTodo.value)">
+      <form (submit)="addTodo($event)">
         <div class="form-group">
           <label for="title">Todo title</label>
           <app-fa-input [icon]="'burn'" class="form-control" (value)="onNewValue($event)">
-            <input appInputRef type="text" placeholder="Enter todo title" id="title" #newTodo required aria-describedby="titleHelp">
+            <input appInputRef type="text" placeholder="Enter todo title" id="title" name="title" [(ngModel)]="todo.title" required aria-describedby="titleHelp">
           </app-fa-input>
           <small id="titleHelp" class="form-text text-muted">This is the sound of C.</small>
+        </div>
+        <div class="form-group">
+          <label for="title">Todo description</label>
+          <app-fa-input [icon]="'comment-alt'" class="form-control" (value)="onNewValue($event)">
+            <input appInputRef type="text" placeholder="Enter todo title" id="description" name="description" [(ngModel)]="todo.description" required aria-describedby="titleHelp">
+          </app-fa-input>
+          <small id="descriptionHelp" class="form-text text-muted">This is the new style of Music.</small>
         </div>
         <button type="submit" class="btn btn-primary"><i class="fas fa-check"></i> Submit</button>
       </form>
@@ -52,29 +34,8 @@
             Todo List with SpringBoot backend and Rest API, NgRx Data store solution for CRUD operations
           </p>
         </div>
-        <table class="table table-hover table-bordered">
-          <thead class="thead-light">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Title</th>
-            <th>&nbsp;</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let todo of todos$ | async; let i = index">
-            <th scope="row"><span [innerText]="todo.id"></span></th>
-            <td><span [innerText]="todo.title"></span></td>
-            <td>
+        <app-todos></app-todos>
 
-              <i class="fas fa-trash float-right text-danger" (click)="deleteTodo(todo.id)"></i>
-              <span *ngIf="todo.active"><i class="float-right far fa-check-square fa-lg text-info mr-2" (click)="updateTodo(todo)"></i></span>
-              <span *ngIf="!todo.active"><i class="float-right far fa-square fa-lg text-secondary mr-2" (click)="updateTodo(todo)"></i></span>
-
-            </td>
-          </tr>
-
-          </tbody>
-        </table>
       </div>
 
       <div class="alert alert-info mt-2">
@@ -86,7 +47,6 @@
   </div>
 
 </div>
-
 
 <footer class="footer">
   <div class="container">

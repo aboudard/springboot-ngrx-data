@@ -13,6 +13,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CompModule} from "./comp/comp.module";
 import {DirectivesModule} from "./directives/directives.module";
 import {ToastrModule} from "ngx-toastr";
+import {TodoModule} from "./todo/todo.module";
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import {ToastrModule} from "ngx-toastr";
   imports: [
     DirectivesModule,
     CompModule,
+    TodoModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

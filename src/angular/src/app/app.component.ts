@@ -15,38 +15,30 @@ import {ToastService} from "./services/toast.service";
 export class AppComponent implements OnInit {
 
   title = 'NgRx Data & SpringBoot together';
-  todos$: Observable<Todo[]>;
+
+  todo: Todo;
   yearNow: string;
   appVersion: string;
   user = { name: 'Bill' };
 
   constructor(
     private todosService: TodosService,
-    private toastService: ToastService
+    private toastService: ToastService // create an instance of the service that intercepts $entities actions
   ) {
-    this.todos$ = todosService.entities$;
+
   }
-  getTodos() {
-    this.todosService.getAll();
-  }
+
 
   ngOnInit() {
     this.yearNow = new Date().getFullYear().toString();
     this.appVersion = 'V X.X.X';
-    this.getTodos();
+
+    this.todo = {title: '', description: '', active: true};
   }
 
-  addTodo(event: Event, todoTitre: string) {
+  addTodo(event: Event) {
     event.preventDefault();
-    this.todosService.add({title: todoTitre, active: true});
-  }
-  deleteTodo(todoId: number) {
-    this.todosService.delete(todoId);
-  }
-
-  updateTodo(todo: Todo) {
-    todo.active = !todo.active;
-    this.todosService.update(todo);
+    this.todosService.add(this.todo);
   }
 
   onClick() {
