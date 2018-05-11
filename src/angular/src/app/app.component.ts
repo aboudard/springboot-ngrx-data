@@ -2,8 +2,8 @@ import {OnInit} from '@angular/core/src/metadata/lifecycle_hooks';
 import {Component, ChangeDetectionStrategy, ViewContainerRef} from '@angular/core';
 import { TodosService } from './services/todos.service';
 import { Todo } from './dto/todo';
-import { Observable } from 'rxjs/Observable';
-import {ToastService} from "./services/toast.service";
+import { Observable } from 'rxjs';
+import {ToastService} from './services/toast.service';
 
 @Component({
   selector: 'app-root',

@@ -1,10 +1,10 @@
 // todos.service.ts
 import { Injectable } from '@angular/core';
-import { EntityServiceBase, EntityServiceFactory } from 'ngrx-data';
+import { EntityCollectionServiceFactory, EntityCollectionServiceBase } from 'ngrx-data';
 import { Todo } from '../dto/todo';
 @Injectable()
-export class TodosService extends EntityServiceBase<Todo> {
-  constructor(entityServiceFactory: EntityServiceFactory) {
+export class TodosService extends EntityCollectionServiceBase<Todo> {
+  constructor(entityServiceFactory: EntityCollectionServiceFactory) {
     super('Todo', entityServiceFactory);
   }
 }
