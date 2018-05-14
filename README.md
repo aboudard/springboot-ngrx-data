@@ -1,7 +1,7 @@
 # springboot-ngrx-data
 
-Spring Boot with NgRx Data in Angular 5
-This project demonstrates the use of Spring Boot with Angular 5 and NgRx Data lib on top of NgRx.
+Spring Boot with NgRx Data in Angular 6
+This project demonstrates the use of Spring Boot with Angular 6 and NgRx Data lib on top of NgRx.
 Find the lib here : https://github.com/johnpapa/angular-ngrx-data
 
 ## Install
