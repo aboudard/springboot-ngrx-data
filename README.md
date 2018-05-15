@@ -59,5 +59,13 @@ npm run dbmock
 
 Open your localhost http://localhost:4200
 
+- Be sure the root path is correct in the /store/app-store.module.ts file :
+```javascript
+// TODO : change this config when using json-server or Spring Boot Data
+const defaultDataServiceConfig: DefaultDataServiceConfig = {
+  root: 'api'
+};
+```
+
 ## Follow the original instructions about NgRx Data
 Check [the original instructions](https://github.com/johnpapa/angular-ngrx-data/blob/master/README.md) about monitoring with Redux Devtools and other details
