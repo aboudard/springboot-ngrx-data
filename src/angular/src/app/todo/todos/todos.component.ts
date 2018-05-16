@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {TodosService} from "../../services/todos.service";
-import {Observable} from "rxjs/Observable";
-import {Todo} from "../../dto/todo";
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { TodosService } from '../../services/todos.service';
+import { Observable } from 'rxjs/Observable';
+import { Todo } from '../../dto/todo';
 
 @Component({
   selector: 'app-todos',
@@ -9,11 +9,17 @@ import {Todo} from "../../dto/todo";
   styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent implements OnInit {
-
+  // title: String;
+  // description: String;
   todos$: Observable<Todo[]>;
 
   constructor(private todosService: TodosService) {
     this.todos$ = todosService.entities$;
+  }
+
+  testModel() {
+    console.log('update');
+    return '12';
   }
 
   getTodos() {
@@ -32,5 +38,4 @@ export class TodosComponent implements OnInit {
   ngOnInit() {
     this.getTodos();
   }
-
 }

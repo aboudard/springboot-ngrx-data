@@ -1,5 +1,13 @@
-import {Component, ContentChild, EventEmitter, HostBinding, Input, OnInit, Output} from '@angular/core';
-import {InputRefDirective} from "../../directives/input-ref.directive";
+import {
+  Component,
+  ContentChild,
+  EventEmitter,
+  HostBinding,
+  Input,
+  OnInit,
+  Output
+} from '@angular/core';
+import { InputRefDirective } from '../../shared/input-ref.directive';
 
 @Component({
   selector: 'app-fa-input',
@@ -7,18 +15,15 @@ import {InputRefDirective} from "../../directives/input-ref.directive";
   styleUrls: ['./fa-input.component.scss']
 })
 export class FaInputComponent implements OnInit {
-
   @Input() icon: string;
   @Output() value = new EventEmitter<string>();
   inputFocus = false;
 
-  @ContentChild(InputRefDirective)
-  input: InputRefDirective;
+  @ContentChild(InputRefDirective) input: InputRefDirective;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   get classes() {
     const cssClasses = {};
@@ -32,5 +37,4 @@ export class FaInputComponent implements OnInit {
     // return this.inputFocus;
     return this.input ? this.input.focus : false;
   }
-
 }

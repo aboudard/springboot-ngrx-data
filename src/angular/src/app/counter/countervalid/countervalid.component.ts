@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {TodosService} from "../../services/todos.service";
-import {Observable} from "rxjs/Observable";
-import {Todo} from "../../dto/todo";
+import { TodosService } from '../../services/todos.service';
+import { Observable } from 'rxjs/Observable';
+import { Todo } from '../../dto/todo';
 
 @Component({
   selector: 'app-countervalid',
@@ -16,7 +16,5 @@ export class CountervalidComponent implements OnInit {
     this.filteredTodos$ = todosService.filteredEntities$;
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

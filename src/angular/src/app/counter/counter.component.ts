@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {TodosService} from "../services/todos.service";
-import {Observable} from "rxjs/Observable";
+import { TodosService } from '../services/todos.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-counter',
@@ -14,7 +14,5 @@ export class CounterComponent implements OnInit {
     this.counter$ = todosService.count$;
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

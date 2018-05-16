@@ -28,11 +28,9 @@ export class AppComponent implements OnInit {
 
   }
 
-
   ngOnInit() {
     this.yearNow = new Date().getFullYear().toString();
     this.appVersion = 'V X.X.X';
-
     this.todo = {title: '', description: '', active: true};
   }
 

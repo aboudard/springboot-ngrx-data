@@ -4,10 +4,11 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../../environments/environment';
 import { EntityStoreModule } from './entity-store.module';
-import {DefaultDataServiceConfig} from "ngrx-data";
+import { DefaultDataServiceConfig } from 'ngrx-data';
 
+// TODO : change this config when using json-server or Spring Boot Data
 const defaultDataServiceConfig: DefaultDataServiceConfig = {
-  root: ''
+  root: 'api'
 };
 
 @NgModule({
@@ -17,7 +18,9 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
     environment.production ? [] : StoreDevtoolsModule.instrument(),
     EntityStoreModule
   ],
-  providers: [{ provide: DefaultDataServiceConfig, useValue: defaultDataServiceConfig }],
+  providers: [
+    { provide: DefaultDataServiceConfig, useValue: defaultDataServiceConfig }
+  ],
   declarations: []
 })
-export class AppStoreModule { }
+export class AppStoreModule {}

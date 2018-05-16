@@ -1,35 +1,49 @@
 <table class="table table-hover table-bordered">
   <thead class="thead-light">
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">Title</th>
-    <th scope="col">Description</th>
-    <th>&nbsp;</th>
-  </tr>
-  <tr>
-    <th></th>
-    <th>
-      <div class="input-group input-group-sm">
-        <input class="form-control" type="text">
-      </div>
-    </th>
-    <th></th>
-    <th></th>
-  </tr>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th>&nbsp;</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>
+        <div class="input-group input-group-sm">
+          <input class="form-control" type="text" [(ngModel)]="title" name="title">
+        </div>
+      </th>
+      <th>
+        <div class="input-group input-group-sm">
+          <input class="form-control" type="text" [(ngModel)]="description" name="description">
+        </div>
+      </th>
+      <th></th>
+    </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let todo of todos$ | async; let i = index">
-    <th scope="row"><span [innerText]="todo.id"></span></th>
-    <td><span [innerText]="todo.title"></span></td>
-    <td><span [innerText]="todo.description"></span></td>
-    <td>
+    <tr *ngFor="let todo of (todos$ | async) | filterPipe:{title: title, description: description}; let i = index">
+      <th scope="row">
+        <span [innerText]="todo.id"></span>
+      </th>
+      <td>
+        <span [innerText]="todo.title"></span>
+      </td>
+      <td>
+        <span [innerText]="todo.description"></span> / {{testModel()}}
+      </td>
+      <td>
 
-      <i class="fas fa-trash float-right text-danger" (click)="deleteTodo(todo.id)"></i>
-      <span *ngIf="todo.active"><i class="float-right far fa-check-square fa-lg text-info mr-2" (click)="updateTodo(todo)"></i></span>
-      <span *ngIf="!todo.active"><i class="float-right far fa-square fa-lg text-secondary mr-2" (click)="updateTodo(todo)"></i></span>
+        <i class="fas fa-trash float-right text-danger" (click)="deleteTodo(todo.id)"></i>
+        <span *ngIf="todo.active">
+          <i class="float-right far fa-check-square fa-lg text-info mr-2" (click)="updateTodo(todo)"></i>
+        </span>
+        <span *ngIf="!todo.active">
+          <i class="float-right far fa-square fa-lg text-secondary mr-2" (click)="updateTodo(todo)"></i>
+        </span>
 
-    </td>
-  </tr>
+      </td>
+    </tr>
 
   </tbody>
 </table>

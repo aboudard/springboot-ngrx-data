@@ -15,7 +15,7 @@
         <div class="form-group">
           <label for="title">Todo description</label>
           <app-fa-input [icon]="'comment-alt'" class="form-control" (value)="onNewValue($event)">
-            <input appInputRef type="text" placeholder="Enter todo title" id="description" name="description" [(ngModel)]="todo.description" required aria-describedby="titleHelp">
+            <input appInputRef type="text" placeholder="Enter todo description" id="description" name="description" [(ngModel)]="todo.description" required aria-describedby="descriptionHelp">
           </app-fa-input>
           <small id="descriptionHelp" class="form-text text-muted">This is the new style of Music.</small>
         </div>
