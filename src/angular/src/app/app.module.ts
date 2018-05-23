@@ -13,12 +13,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CompModule } from './comp/comp.module';
 import { ToastrModule } from 'ngx-toastr';
 import { TodoModule } from './todo/todo.module';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
-  declarations: [AppComponent, CounterComponent, CountervalidComponent],
+  declarations: [AppComponent],
   imports: [
     CompModule,
     TodoModule,
+    AdminModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -27,7 +30,8 @@ import { TodoModule } from './todo/todo.module';
     ServicesModule,
     NgbModule.forRoot(),
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot() // ToastrModule added
+    ToastrModule.forRoot(),
+    AppRoutingModule // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]
