@@ -9,8 +9,8 @@ import { Todo } from '../../dto/todo';
   styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent implements OnInit {
-  // title: String;
-  // description: String;
+  title: String;
+  description: String;
   todos$: Observable<Todo[]>;
 
   constructor(private todosService: TodosService) {

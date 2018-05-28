@@ -4,8 +4,11 @@ import { FaInputComponent } from './fa-input/fa-input.component';
 import { HelloComponent } from './hello/hello.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
-import { FooterComponent } from './footer/footer.component';;
+import { FooterComponent } from './footer/footer.component';
 
+/**
+ * Module des composants annexes non liés aux routes
+ */
 @NgModule({
   imports: [CommonModule, AppRoutingModule],
   declarations: [

@@ -1,4 +1,11 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Input,
+  OnInit,
+  OnDestroy
+} from '@angular/core';
 
 @Component({
   selector: 'app-hello',
@@ -6,8 +13,7 @@ import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit} fr
   styleUrls: ['./hello.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HelloComponent implements OnInit {
-
+export class HelloComponent implements OnInit, OnDestroy {
   @Input() user;
   count = 0;
 
@@ -23,7 +29,9 @@ export class HelloComponent implements OnInit {
     }, 1000);
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
+  ngOnDestroy(): void {
+    this.cdr.detach();
+  }
 }

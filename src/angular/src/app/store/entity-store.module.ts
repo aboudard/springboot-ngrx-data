@@ -1,8 +1,12 @@
 // entity-store.module.ts
 import { NgModule } from '@angular/core';
-import { EntityMetadataMap, NgrxDataModule, PropsFilterFnFactory } from 'ngrx-data';
+import {
+  EntityMetadataMap,
+  NgrxDataModule,
+  PropsFilterFnFactory
+} from 'ngrx-data';
 
-export function activeFilter(entities: {active: boolean}[], search: boolean) {
+export function activeFilter(entities: { active: boolean }[], search: boolean) {
   return entities.filter(e => e.active === search);
 }
 
@@ -19,8 +23,16 @@ export function textFilter<T extends { title: string; description: string }>(
 ) {
   return PropsFilterFnFactory(['title', 'description'])(entities, pattern);
 }
-
-export function sortByTitle(a: { title: string }, b: { title: string }): number {
+/**
+ * Fonction de comparaison pour trier les entities
+ * @param {string} a
+ * @param {string} b
+ * @returns {number}
+ */
+export function sortByTitle(
+  a: { title: string },
+  b: { title: string }
+): number {
   return a.title.localeCompare(b.title);
 }
 
@@ -31,8 +43,6 @@ export const entityMetadata: EntityMetadataMap = {
   }
 };
 @NgModule({
-  imports: [
-    NgrxDataModule.forRoot({ entityMetadata: entityMetadata })
-  ]
+  imports: [NgrxDataModule.forRoot({ entityMetadata: entityMetadata })]
 })
-export class EntityStoreModule { }
+export class EntityStoreModule {}

@@ -5,6 +5,7 @@
       <th scope="col">Title</th>
       <th scope="col">Description</th>
       <th>&nbsp;</th>
+      <th>&nbsp;</th>
     </tr>
     <tr>
       <th></th>
@@ -18,7 +19,8 @@
           <input class="form-control" type="text" [(ngModel)]="description" name="description">
         </div>
       </th>
-      <th></th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
     </tr>
   </thead>
   <tbody>
@@ -33,15 +35,15 @@
         <span [innerText]="todo.description"></span> / {{testModel()}}
       </td>
       <td>
-
-        <i class="fas fa-trash float-right text-danger" (click)="deleteTodo(todo.id)"></i>
+        <i class="fas fa-trash text-danger" (click)="deleteTodo(todo.id)"></i>
+      </td>
+      <td>
         <span *ngIf="todo.active">
-          <i class="float-right far fa-check-square fa-lg text-info mr-2" (click)="updateTodo(todo)"></i>
+          <i class="far fa-check-square fa-lg text-info mr-2" (click)="updateTodo(todo)"></i>
         </span>
         <span *ngIf="!todo.active">
-          <i class="float-right far fa-square fa-lg text-secondary mr-2" (click)="updateTodo(todo)"></i>
+          <i class="far fa-square fa-lg text-secondary mr-2" (click)="updateTodo(todo)"></i>
         </span>
-
       </td>
     </tr>
 

@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { CommonModule } from '@angular/common';
-import { AdminComponent } from '../admin/admin.component';
 import { TodoComponent } from '../todo/todo.component';
+import { AdminModule } from '../admin/admin.module';
 
 const routes: Routes = [
   {
     path: 'admin',
-    component: AdminComponent
+    loadChildren: () => AdminModule
   },
   {
     path: 'todo',
@@ -22,7 +23,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-  declarations: []
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}
