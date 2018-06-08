@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodosService } from '../services/todos.service';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-counter',
@@ -11,7 +11,7 @@ export class CounterComponent implements OnInit {
   counter$: Observable<number>;
 
   constructor(private todosService: TodosService) {
-    this.counter$ = todosService.count$;
+    this.counter$ = this.todosService.count$;
   }
 
   ngOnInit() {}

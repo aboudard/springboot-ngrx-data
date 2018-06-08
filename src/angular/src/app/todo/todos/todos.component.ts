@@ -1,7 +1,8 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TodosService } from '../../services/todos.service';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Todo } from '../../dto/todo';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-todos',
@@ -13,7 +14,7 @@ export class TodosComponent implements OnInit {
   description: String;
   todos$: Observable<Todo[]>;
 
-  constructor(private todosService: TodosService) {
+  constructor(private todosService: TodosService, private router: Router) {
     this.todos$ = todosService.entities$;
   }
 
@@ -38,4 +39,8 @@ export class TodosComponent implements OnInit {
   ngOnInit() {
     this.getTodos();
   }
+
+  editTodo(id: number) {
+    this.router.navigate(['todopage', id]);
+  }src
 }

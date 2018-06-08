@@ -6,8 +6,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TodoComponent } from './todo.component';
 import { CountervalidComponent } from '../counter/countervalid/countervalid.component';
 import { CounterComponent } from '../counter/counter.component';
-import { HelloComponent } from '../comp/hello/hello.component';
 import { CompModule } from '../comp/comp.module';
+import { TodoEditComponent } from './todo-edit/todo-edit.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -15,13 +16,15 @@ import { CompModule } from '../comp/comp.module';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    CompModule
+    CompModule,
+    RouterModule
   ],
   declarations: [
     TodosComponent,
     TodoComponent,
     CounterComponent,
-    CountervalidComponent
+    CountervalidComponent,
+    TodoEditComponent
   ],
   exports: [TodosComponent]
 })

@@ -1,12 +1,4 @@
-import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
-import {
-  Component,
-  ChangeDetectionStrategy,
-  ViewContainerRef
-} from '@angular/core';
-import { TodosService } from './services/todos.service';
-import { Todo } from './dto/todo';
-import { Observable } from 'rxjs';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ToastService } from './services/toast.service';
 
 @Component({
@@ -15,10 +7,8 @@ import { ToastService } from './services/toast.service';
   styleUrls: ['./app.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   constructor(
     private toastService: ToastService // create an instance of the service that intercepts $entities actions
   ) {}
-
-  ngOnInit() {}
 }

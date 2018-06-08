@@ -1,28 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CommonModule } from '@angular/common';
 import { TodoComponent } from '../todo/todo.component';
 import { AdminModule } from '../admin/admin.module';
+import { TodoEditComponent } from '../todo/todo-edit/todo-edit.component';
 
 const routes: Routes = [
   {
-    path: 'admin',
+    path: '',
+    redirectTo: 'todopage',
+    pathMatch: 'full'
+  },
+  {
+    path: 'adminpage',
     loadChildren: () => AdminModule
   },
   {
-    path: 'todo',
+    path: 'todopage',
     component: TodoComponent
   },
-  {
-    path: '',
-    redirectTo: 'todo',
-    pathMatch: 'full'
-  }
+  { path: 'todopage/:id', component: TodoEditComponent },
+  { path: '**', redirectTo: 'todopage' } // bad routes redirect to todopage
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

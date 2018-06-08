@@ -10,7 +10,7 @@ import java.util.Optional;
  * Created by a10282 on 11/04/2018.
  */
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api")
 public class TodoController {
 
     private TodoRepository todoRepository;

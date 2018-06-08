@@ -5,7 +5,6 @@
       <th scope="col">Title</th>
       <th scope="col">Description</th>
       <th>&nbsp;</th>
-      <th>&nbsp;</th>
     </tr>
     <tr>
       <th></th>
@@ -19,7 +18,6 @@
           <input class="form-control" type="text" [(ngModel)]="description" name="description">
         </div>
       </th>
-      <th>&nbsp;</th>
       <th>&nbsp;</th>
     </tr>
   </thead>
@@ -35,15 +33,21 @@
         <span [innerText]="todo.description"></span> / {{testModel()}}
       </td>
       <td>
-        <i class="fas fa-trash text-danger" (click)="deleteTodo(todo.id)"></i>
-      </td>
-      <td>
-        <span *ngIf="todo.active">
-          <i class="far fa-check-square fa-lg text-info mr-2" (click)="updateTodo(todo)"></i>
-        </span>
-        <span *ngIf="!todo.active">
-          <i class="far fa-square fa-lg text-secondary mr-2" (click)="updateTodo(todo)"></i>
-        </span>
+
+        <div class="btn-group" role="group" aria-label="Actions">
+          <button type="button" class="btn btn-outline-secondary" (click)="editTodo(todo.id)">
+            <i class="far fa-edit"></i>
+          </button>
+          <button type="button" class="btn btn-outline-secondary" (click)="deleteTodo(todo.id)">
+            <i class="fas fa-trash text-danger"></i>
+          </button>
+          <button type="button" class="btn btn-outline-secondary">
+            <i *ngIf="todo.active" class="far fa-check-square fa-lg text-info" (click)="updateTodo(todo)"></i>
+            <i *ngIf="!todo.active" class="far fa-square fa-lg text-secondary" (click)="updateTodo(todo)"></i>
+          </button>
+        </div>
+
+
       </td>
     </tr>
 

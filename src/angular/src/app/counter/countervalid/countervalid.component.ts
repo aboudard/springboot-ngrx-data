@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodosService } from '../../services/todos.service';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Todo } from '../../dto/todo';
 
 @Component({
@@ -12,8 +12,8 @@ export class CountervalidComponent implements OnInit {
   filteredTodos$: Observable<Todo[]>;
 
   constructor(private todosService: TodosService) {
-    todosService.setFilter(true);
-    this.filteredTodos$ = todosService.filteredEntities$;
+    this.todosService.setFilter(true);
+    this.filteredTodos$ = this.todosService.filteredEntities$;
   }
 
   ngOnInit() {}

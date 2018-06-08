@@ -1,9 +1,6 @@
 package ru.coco.todo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by a10282 on 11/04/2018.
@@ -11,8 +8,6 @@ import javax.persistence.Id;
 @Entity
 public class Todo {
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
 
     private String title;
@@ -20,6 +15,18 @@ public class Todo {
     private String description;
 
     private Boolean active;
+
+    private TodoCategory todoCategory;
+
+    public Todo() {
+    }
+
+    public Todo(String title, String description, Boolean active, TodoCategory todoCategory) {
+        this.title = title;
+        this.description = description;
+        this.active = active;
+        this.todoCategory = todoCategory;
+    }
 
     public Boolean getActive() {
         return active;
@@ -29,6 +36,8 @@ public class Todo {
         this.active = active;
     }
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     public Long getId() {
         return id;
     }
@@ -51,5 +60,14 @@ public class Todo {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    public TodoCategory getTodoCategory() {
+        return todoCategory;
+    }
+
+    public void setTodoCategory(TodoCategory todoCategory) {
+        this.todoCategory = todoCategory;
     }
 }
