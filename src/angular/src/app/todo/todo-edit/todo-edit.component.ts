@@ -4,7 +4,7 @@ import { map, switchMap, takeUntil, shareReplay } from 'rxjs/operators';
 import { Observable, combineLatest, Subject } from 'rxjs';
 import { TodosService } from '../../services/todos.service';
 import { Todo } from '../../dto/todo';
-import { FormGroup, FormControl } from '@angular/forms';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
 import { Location } from '@angular/common';
 
 @Component({
@@ -23,6 +23,18 @@ export class TodoEditComponent implements OnInit, OnDestroy {
     private todosService: TodosService,
     private location: Location
   ) {}
+
+  validateForm(formGroup: FormGroup) {
+    if (formGroup.get('title').value === '' && formGroup.get('description').value === '') {
+      return {
+        validateForm: {
+          msg: 'Au moins un des champs doit être renseigné'
+        }
+      }
+    } else {
+      return null;
+    }
+  }
 
   /**
    * Chargement des entities avec lecture dans le cache
@@ -50,6 +62,8 @@ export class TodoEditComponent implements OnInit, OnDestroy {
       description: new FormControl(),
       active: new FormControl(),
       id: new FormControl()
+    }, (formGroup: FormGroup) => {
+      return this.validateForm(formGroup);
     });
 
     this.todo$.subscribe((todo: Todo) => {

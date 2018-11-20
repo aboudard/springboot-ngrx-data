@@ -4,7 +4,7 @@
 /**
 ngx-toastr
  */
-@import "~ngx-toastr/toastr-bs4-alert";
+@import "~ngx-toastr/toastr.css";
 
 /**
 Font Awesome 5
@@ -13,4 +13,13 @@ $fa-font-path: "~@fortawesome/fontawesome-free-webfonts/webfonts";
 @import "~@fortawesome/fontawesome-free-webfonts/scss/fontawesome.scss";
 @import "~@fortawesome/fontawesome-free-webfonts/scss/fa-solid.scss";
 @import "~@fortawesome/fontawesome-free-webfonts/scss/fa-regular.scss";
+
+$font-family-icon: 'Font Awesome 5 Free';
+$check-icon: "\f00c";
+.abc-checkbox label:after {
+  padding-left: 4px;
+  padding-top: 2px;
+  font-size: 9px;
+  font-weight: 900;
+}
 @import "~awesome-bootstrap-checkbox/awesome-bootstrap-checkbox";

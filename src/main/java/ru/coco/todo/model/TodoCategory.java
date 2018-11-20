@@ -13,6 +13,12 @@ public class TodoCategory {
     private String name;
     private Set<Todo> todos;
 
+    public TodoCategory() {
+    }
+
+    public TodoCategory(String name) {
+        this.name = name;
+    }
 
     @JsonIgnore
     @OneToMany(mappedBy = "todoCategory", cascade = CascadeType.ALL)
