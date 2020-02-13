@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TodosService } from '../../services/todos.service';
 import { Observable } from 'rxjs';
 import { Todo } from '../../dto/todo';
-import {Router} from "@angular/router";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-todos',
@@ -42,5 +42,5 @@ export class TodosComponent implements OnInit {
 
   editTodo(id: number) {
     this.router.navigate(['todopage', id]);
-  }src
+  }
 }
