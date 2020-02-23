@@ -1,8 +1,8 @@
 # springboot-ngrx-data
 
-Spring Boot with NgRx Data in Angular 6
-This project demonstrates the use of Spring Boot with Angular 6 and NgRx Data lib on top of NgRx.
-Find the lib here : https://github.com/johnpapa/angular-ngrx-data
+Spring Boot with NgRx Data in Angular 8
+This project demonstrates the use of Spring Boot with Angular 8 and NgRx Data lib on top of NgRx.
+Find the lib here : https://ngrx.io/guide/data
 
 ## Install
 
@@ -68,4 +68,4 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
 ```
 
 ## Follow the original instructions about NgRx Data
-Check [the original instructions](https://github.com/johnpapa/angular-ngrx-data/blob/master/README.md) about monitoring with Redux Devtools and other details
+Check [the original instructions](https://ngrx.io/guide/data) about monitoring with Redux Devtools and other details
