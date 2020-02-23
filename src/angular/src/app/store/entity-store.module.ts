@@ -1,10 +1,7 @@
+import { EntityDataModule } from '@ngrx/data';
 // entity-store.module.ts
 import { NgModule } from '@angular/core';
-import {
-  EntityMetadataMap,
-  NgrxDataModule,
-  PropsFilterFnFactory
-} from 'ngrx-data';
+import { PropsFilterFnFactory, EntityMetadataMap } from '@ngrx/data';
 
 export function activeFilter(entities: { active: boolean }[], search: boolean) {
   return entities.filter(e => e.active === search);
@@ -43,6 +40,6 @@ export const entityMetadata: EntityMetadataMap = {
   }
 };
 @NgModule({
-  imports: [NgrxDataModule.forRoot({ entityMetadata: entityMetadata })]
+  imports: [EntityDataModule.forRoot({ entityMetadata: entityMetadata })]
 })
 export class EntityStoreModule {}

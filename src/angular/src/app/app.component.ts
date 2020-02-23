@@ -1,3 +1,4 @@
+import { UtilsService } from './services/utils.service';
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ToastService } from './services/toast.service';
 
@@ -9,6 +10,9 @@ import { ToastService } from './services/toast.service';
 })
 export class AppComponent {
   constructor(
+    private utilsService: UtilsService,
     private toastService: ToastService // create an instance of the service that intercepts $entities actions
-  ) {}
+  ) {
+    this.utilsService.initIcons();
+  }
 }

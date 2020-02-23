@@ -36,14 +36,14 @@
 
         <div class="btn-group" role="group" aria-label="Actions">
           <button type="button" class="btn btn-outline-secondary" (click)="editTodo(todo.id)">
-            <i class="far fa-edit"></i>
+            <fa-icon icon="edit"></fa-icon>
           </button>
           <button type="button" class="btn btn-outline-secondary" (click)="deleteTodo(todo.id)">
-            <i class="fas fa-trash text-danger"></i>
+            <fa-icon class="text-danger" icon="trash"></fa-icon>
           </button>
-          <button type="button" class="btn btn-outline-secondary">
-            <i *ngIf="todo.active" class="far fa-check-square fa-lg text-info" (click)="updateTodo(todo)"></i>
-            <i *ngIf="!todo.active" class="far fa-square fa-lg text-secondary" (click)="updateTodo(todo)"></i>
+          <button type="button" class="btn btn-outline-secondary" (click)="updateTodo(todo)">
+            <fa-icon *ngIf="todo.active" class="text-info" icon="check-square"></fa-icon>
+            <fa-icon *ngIf="!todo.active" class="text-secondary" icon="square"></fa-icon>
           </button>
         </div>
 

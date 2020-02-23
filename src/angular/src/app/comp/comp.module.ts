@@ -1,3 +1,4 @@
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FaInputComponent } from './fa-input/fa-input.component';
@@ -10,7 +11,7 @@ import { RouterModule } from '@angular/router';
  * Module des composants annexes non liés aux routes
  */
 @NgModule({
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FontAwesomeModule],
   declarations: [
     FaInputComponent,
     HelloComponent,

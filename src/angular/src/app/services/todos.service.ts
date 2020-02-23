@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
-import {
-  EntityCollectionServiceBase,
-  EntityCollectionServiceElementsFactory
-} from 'ngrx-data';
+
 import { Todo } from '../dto/todo';
+import { EntityCollectionServiceBase, EntityCollectionServiceElementsFactory } from '@ngrx/data';
 /**
  * Service qui map les Entities NgRx Data avec l'interface Todo
  */

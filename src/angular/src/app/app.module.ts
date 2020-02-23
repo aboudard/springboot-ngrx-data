@@ -13,6 +13,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { TodoModule } from './todo/todo.module';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AdminModule } from './admin/admin.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,10 +27,11 @@ import { AdminModule } from './admin/admin.module';
     BrowserModule,
     AppStoreModule,
     ServicesModule,
-    NgbModule.forRoot(),
+    NgbModule,
+    FontAwesomeModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
-    AppRoutingModule // ToastrModule added
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

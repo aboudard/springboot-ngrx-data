@@ -1,3 +1,4 @@
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TodosComponent } from './todos/todos.component';
@@ -17,7 +18,8 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     CompModule,
-    RouterModule
+    RouterModule,
+    FontAwesomeModule
   ],
   declarations: [
     TodosComponent,

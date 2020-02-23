@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { EntityAction, OP_ERROR, OP_SUCCESS, ofEntityOp } from 'ngrx-data';
+import { EntityAction, OP_ERROR, OP_SUCCESS, ofEntityOp } from '@ngrx/data';
 import { ToastrService } from 'ngx-toastr';
 import { Actions } from '@ngrx/effects';
 import { filter } from 'rxjs/operators';
