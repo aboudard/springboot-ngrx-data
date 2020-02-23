@@ -11,4 +11,6 @@ export interface Todo {
   description: string;
   /** active : booléen gérant le statut */
   active: boolean;
+
+  dateTodo: Date;
 }

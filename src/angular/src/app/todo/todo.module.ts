@@ -10,6 +10,7 @@ import { CounterComponent } from '../counter/counter.component';
 import { CompModule } from '../comp/comp.module';
 import { TodoEditComponent } from './todo-edit/todo-edit.component';
 import { RouterModule } from '@angular/router';
+import { NgbDatepicker, NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     CompModule,
     RouterModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgbDatepickerModule
   ],
   declarations: [
     TodosComponent,

@@ -18,7 +18,7 @@ export class TodoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.todo = { title: '', description: '', active: true };
+    this.todo = { title: '', description: '', active: true, dateTodo: new Date() };
     this.loading$.subscribe(isLoading => {
       console.log('loading : ' + isLoading);
     });

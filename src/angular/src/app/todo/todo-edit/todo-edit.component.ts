@@ -43,8 +43,8 @@ export class TodoEditComponent implements OnInit, OnDestroy {
    */
   ngOnInit() {
     this.todo$ = combineLatest(
-      this.route.paramMap.pipe(map(paramMap => paramMap.get('id'))),
-      this.todosService.entityMap$
+      [this.route.paramMap.pipe(map(paramMap => paramMap.get('id'))),
+      this.todosService.entityMap$]
     ).pipe(
       map(([id, entityMap]) => {
         const todo = entityMap[id];
@@ -61,6 +61,7 @@ export class TodoEditComponent implements OnInit, OnDestroy {
       title: new FormControl(),
       description: new FormControl(),
       active: new FormControl(),
+      dateTodo: new FormControl(),
       id: new FormControl()
     }, (formGroup: FormGroup) => {
       return this.validateForm(formGroup);

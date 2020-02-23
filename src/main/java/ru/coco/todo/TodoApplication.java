@@ -1,5 +1,7 @@
 package ru.coco.todo;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -22,8 +24,8 @@ public class TodoApplication {
 	@Bean
 	InitializingBean sendDatabase() {
 		return () -> {
-			todoRepository.save(new Todo("John", "the life of Rambo", true, new TodoCategory("Recettes")));
-			todoRepository.save(new Todo("Billy", "the Kid", true, new TodoCategory("Western")));
+			todoRepository.save(new Todo("John", "the life of Rambo", true, new TodoCategory("Recettes"), new Date()));
+			todoRepository.save(new Todo("Billy", "the Kid", true, new TodoCategory("Western"), new Date()));
 		};
 	}
 }

@@ -1,3 +1,4 @@
+import { CustomAdapter } from './shared/custom-adapter';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -5,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppStoreModule } from './store/app-store.module';
 import { ServicesModule } from './services/services.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CompModule } from './comp/comp.module';
@@ -33,7 +34,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ToastrModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: NgbDateAdapter, useClass: CustomAdapter
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

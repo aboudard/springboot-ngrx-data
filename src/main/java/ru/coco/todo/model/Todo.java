@@ -1,6 +1,10 @@
 package ru.coco.todo.model;
 
+import java.util.Date;
+
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 /**
  * Created by a10282 on 11/04/2018.
@@ -18,14 +22,18 @@ public class Todo {
 
     private TodoCategory todoCategory;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    private Date dateTodo;
+
     public Todo() {
     }
 
-    public Todo(String title, String description, Boolean active, TodoCategory todoCategory) {
+    public Todo(String title, String description, Boolean active, TodoCategory todoCategory, Date dateTodo) {
         this.title = title;
         this.description = description;
         this.active = active;
         this.todoCategory = todoCategory;
+        this.dateTodo = dateTodo;
     }
 
     public Boolean getActive() {
@@ -69,5 +77,13 @@ public class Todo {
 
     public void setTodoCategory(TodoCategory todoCategory) {
         this.todoCategory = todoCategory;
+    }
+
+    public Date getDateTodo() {
+        return dateTodo;
+    }
+
+    public void setDateTodo(Date dateTodo) {
+        this.dateTodo = dateTodo;
     }
 }
