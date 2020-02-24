@@ -6,20 +6,23 @@ import { TodoEditComponent } from '../todo/todo-edit/todo-edit.component';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'todopage',
-    pathMatch: 'full'
-  },
-  {
-    path: 'adminpage',
-    loadChildren: () => import('../admin/admin.module').then(m => m.AdminModule),
+    path: 'files',
+    loadChildren: () => import('../files/files.module').then(m => m.FilesModule)
   },
   {
     path: 'todopage',
     component: TodoComponent
   },
-  { path: 'todopage/:id', component: TodoEditComponent },
-  { path: '**', redirectTo: 'todopage' } // bad routes redirect to todopage
+  {
+    path: 'todopage/:id',
+    component: TodoEditComponent
+  },
+  {
+    path: '',
+    redirectTo: 'todopage',
+    pathMatch: 'full'
+  },
+  { path: '**', redirectTo: 'todopage' }
 ];
 
 @NgModule({

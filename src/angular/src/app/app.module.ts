@@ -13,7 +13,6 @@ import { CompModule } from './comp/comp.module';
 import { ToastrModule } from 'ngx-toastr';
 import { TodoModule } from './todo/todo.module';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import { AdminModule } from './admin/admin.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CustomDateParser } from './shared/custom-date-parser';
 
@@ -22,7 +21,6 @@ import { CustomDateParser } from './shared/custom-date-parser';
   imports: [
     CompModule,
     TodoModule,
-    AdminModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
