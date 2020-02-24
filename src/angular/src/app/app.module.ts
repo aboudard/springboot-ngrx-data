@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppStoreModule } from './store/app-store.module';
 import { ServicesModule } from './services/services.module';
-import { NgbModule, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbDateAdapter, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CompModule } from './comp/comp.module';
@@ -15,6 +15,7 @@ import { TodoModule } from './todo/todo.module';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AdminModule } from './admin/admin.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CustomDateParser } from './shared/custom-date-parser';
 
 @NgModule({
   declarations: [AppComponent],
@@ -37,8 +38,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   providers: [
     {
       provide: NgbDateAdapter, useClass: CustomAdapter
+    },
+    {
+      provide: NgbDateParserFormatter, useClass: CustomDateParser
     }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

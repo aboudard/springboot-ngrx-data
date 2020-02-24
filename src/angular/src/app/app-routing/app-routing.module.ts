@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { TodoComponent } from '../todo/todo.component';
-import { AdminModule } from '../admin/admin.module';
 import { TodoEditComponent } from '../todo/todo-edit/todo-edit.component';
 
 const routes: Routes = [
@@ -13,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'adminpage',
-    loadChildren: () => AdminModule
+    loadChildren: () => import('../admin/admin.module').then(m => m.AdminModule),
   },
   {
     path: 'todopage',
@@ -27,4 +26,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

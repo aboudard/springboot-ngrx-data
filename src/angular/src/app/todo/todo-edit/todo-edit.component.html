@@ -2,22 +2,25 @@
   <form (ngSubmit)="saveTodo()" novalidate [formGroup]="todoForm">
     <div class="form-group">
       <label for="todoTitle">Todo title</label>
-      <input type="text" class="form-control" id="todoTitle" formControlName="title" aria-describedby="titleHelp" placeholder="Enter title">
+      <input type="text" class="form-control" id="todoTitle" formControlName="title" aria-describedby="titleHelp"
+        placeholder="Enter title">
       <small id="titleHelp" class="form-text text-muted">This is the sound of C.</small>
       <input type="hidden" formControlName="id">
     </div>
     <div class="form-group">
       <label for="todoDescription">Todo description</label>
-      <input type="text" class="form-control" id="todoDescription" formControlName="description" placeholder="Enter description">
+      <input type="text" class="form-control" id="todoDescription" formControlName="description"
+        placeholder="Enter description">
     </div>
     <div class="form-group">
       <label for="">Date due</label>
       <div class="input-group">
-
-        <input class="form-control" placeholder="yyyy-mm-dd"
-               name="dp" formControlName="dateTodo" ngbDatepicker #d="ngbDatepicker">
+        <input class="form-control" placeholder="yyyy-mm-dd" name="dp" formControlName="dateTodo" ngbDatepicker
+          #d="ngbDatepicker">
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+          <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+            <fa-icon icon="calendar"></fa-icon>
+          </button>
         </div>
       </div>
     </div>
@@ -34,6 +37,7 @@
     </div>
 
     <button type="submit" class="btn btn-primary" [disabled]="todoForm.invalid || todoForm.pristine">
-      <fa-icon icon="check"></fa-icon> Submit</button>
+      <fa-icon icon="check"></fa-icon> Submit
+    </button>
   </form>
 </div>
