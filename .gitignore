@@ -3,6 +3,8 @@
 /src/angular/node_modules/
 !.mvn/wrapper/maven-wrapper.jar
 
+.vscode
+
 ### STS ###
 .apt_generated
 .classpath
