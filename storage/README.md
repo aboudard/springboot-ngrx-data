@@ -1,0 +1,1 @@
+Simple storage folder for Spring File uploads.

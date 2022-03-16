@@ -26,6 +26,11 @@ cd src/angular
 npm install
 ```
 
+### Application properties
+If you want to upload the files with te dedicated screen, you need to modifiy the properties
+
+`storage.location=D:/tests/springboot/todo/storage`
+
 ## Runnning
 
 Just run the build (in watch mode if you plan to work on sources)
