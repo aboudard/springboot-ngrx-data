@@ -1,0 +1,2 @@
+name: NgRx Data test actions
+on: ["push"]
