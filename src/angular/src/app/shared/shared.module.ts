@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { InputRefDirective } from './input-ref.directive';
-import { FilterPipe } from './filter.pipe';
+import { NgModule } from '@angular/core';
 import { CalculePipe } from './calcule.pipe';
+import { FilterPipe } from './filter.pipe';
+import { InputRefDirective } from './input-ref.directive';
 
 @NgModule({
   imports: [CommonModule],

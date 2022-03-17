@@ -1,6 +1,6 @@
-import { TestBed, inject } from '@angular/core/testing';
-
+import { inject, TestBed } from '@angular/core/testing';
 import { TodosService } from './todos.service';
+
 
 describe('TodosService', () => {
   beforeEach(() => {

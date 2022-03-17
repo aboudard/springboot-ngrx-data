@@ -1,5 +1,7 @@
 import { NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class CustomDateParser extends NgbDateParserFormatter {
 
   readonly DELIMITER = '-';

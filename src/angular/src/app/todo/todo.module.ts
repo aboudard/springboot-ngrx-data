@@ -10,7 +10,7 @@ import { CounterComponent } from '../counter/counter.component';
 import { CompModule } from '../comp/comp.module';
 import { TodoEditComponent } from './todo-edit/todo-edit.component';
 import { RouterModule } from '@angular/router';
-import { NgbDatepicker, NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [

@@ -1,5 +1,4 @@
-import { Todo } from '../dto/todo';
-import { EntityMetadataMap, EntityDataModuleConfig } from '@ngrx/data';
+import { EntityDataModuleConfig, EntityMetadataMap } from '@ngrx/data';
 
 export function activeFilter(entities: { active: boolean }[], search: boolean) {
   return entities.filter(e => e.active === search);

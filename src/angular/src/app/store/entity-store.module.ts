@@ -1,7 +1,6 @@
-import { EntityDataModule } from '@ngrx/data';
 // entity-store.module.ts
 import { NgModule } from '@angular/core';
-import { PropsFilterFnFactory, EntityMetadataMap } from '@ngrx/data';
+import { EntityDataModule, EntityMetadataMap, PropsFilterFnFactory } from '@ngrx/data';
 
 export function activeFilter(entities: { active: boolean }[], search: boolean) {
   return entities.filter(e => e.active === search);

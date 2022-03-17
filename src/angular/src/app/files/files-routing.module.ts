@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
+import { RouterModule, Routes } from '@angular/router';
 import { FilesComponent } from './files.component';
+
 
 const routes: Routes = [{ path: '', component: FilesComponent }];
 

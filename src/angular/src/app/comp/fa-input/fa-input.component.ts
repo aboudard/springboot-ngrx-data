@@ -18,7 +18,7 @@ export class FaInputComponent {
   @Output() value = new EventEmitter<string>();
   inputFocus = false;
 
-  @ContentChild(InputRefDirective, {static: false}) input: InputRefDirective;
+  @ContentChild(InputRefDirective) input: InputRefDirective;
 
   @HostBinding('class.focus')
   get focus() {
