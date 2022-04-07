@@ -30,7 +30,8 @@ export class UploadComponent implements OnInit {
 
   submitFile() {
     this.filesService.postFile(this.fileToUpload).subscribe((flag: any) => {
-      console.log(flag);
+      this.toastrservice.info(flag, 'Opération OK');
+      this.uploadForm.reset();
     }, (error) => {
       this.toastrservice.error(error.error, 'Error with file upload');
     });

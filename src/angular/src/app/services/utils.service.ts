@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import {
-  faCheck, faBurn, faCommentAlt, faEdit, faTrash,
-  faCheckSquare, faSquare, faUpload, faCalendar
+  faCheck, faTrash, faSquare, faUpload, faCalendar, faFire, faPencil, faCommentDots, faSquareCheck
 } from '@fortawesome/free-solid-svg-icons';
 
 @Injectable({
@@ -13,7 +12,7 @@ export class UtilsService {
 
   initIcons(): void {
     this.library.addIcons(
-      faCheck, faBurn, faCommentAlt, faEdit, faTrash, faCheckSquare, faSquare, faUpload, faCalendar
+      faCheck, faFire, faCommentDots, faPencil, faTrash, faSquareCheck, faSquare, faUpload, faCalendar
     );
   }
 }

@@ -32,8 +32,9 @@ export class TodosComponent implements OnInit {
   }
 
   updateTodo(todo: Todo) {
-    todo.active = !todo.active;
-    this.todosService.update(todo);
+    // can't mutate the object directly
+    // todo.active = !todo.active;
+    this.todosService.update({...todo, active: !todo.active});
   }
 
   ngOnInit() {

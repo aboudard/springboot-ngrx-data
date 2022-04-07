@@ -6,10 +6,11 @@ import { FilesComponent } from './files.component';
 import { UploadComponent } from './upload/upload.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ListComponent } from './list/list.component';
 
 
 @NgModule({
-  declarations: [FilesComponent, UploadComponent],
+  declarations: [FilesComponent, UploadComponent, ListComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

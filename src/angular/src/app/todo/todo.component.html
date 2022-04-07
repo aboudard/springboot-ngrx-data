@@ -6,14 +6,14 @@
       <form (submit)="addTodo($event)">
         <div class="form-group">
           <label for="title">Todo title</label>
-          <app-fa-input [icon]="'burn'" class="form-control" (value)="onNewValue($event)">
+          <app-fa-input [icon]="'fire'" class="form-control" (value)="onNewValue($event)">
             <input appInputRef type="text" placeholder="Enter todo title" id="title" name="title" [(ngModel)]="todo.title" required aria-describedby="titleHelp">
           </app-fa-input>
           <small id="titleHelp" class="form-text text-muted">This is the sound of C.</small>
         </div>
         <div class="form-group">
           <label for="title">Todo description</label>
-          <app-fa-input [icon]="'comment-alt'" class="form-control" (value)="onNewValue($event)">
+          <app-fa-input [icon]="'comment-dots'" class="form-control" (value)="onNewValue($event)">
             <input appInputRef type="text" placeholder="Enter todo description" id="description" name="description" [(ngModel)]="todo.description"
               required aria-describedby="descriptionHelp">
           </app-fa-input>
