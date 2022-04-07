@@ -1,8 +1,11 @@
 # springboot-ngrx-data
 
-Spring Boot with NgRx Data in Angular 8
-This project demonstrates the use of Spring Boot with Angular 8 and NgRx Data lib on top of NgRx.
+Spring Boot with NgRx Data in Angular 10
+This project demonstrates the use of Spring Boot with Angular 10 and NgRx Data lib on top of NgRx.
 Find the lib here : https://ngrx.io/guide/data
+
+Source code of this article :
+https://coco-boudard.medium.com/spring-boot-data-and-angular-ngrx-data-cbed33fc6015
 
 ## Install
 

@@ -32,7 +32,7 @@ export class TodosComponent implements OnInit {
   }
 
   updateTodo(todo: Todo) {
-    // can't mutate the object directly
+    // can't mutate the object directly since NgRx 10
     // todo.active = !todo.active;
     this.todosService.update({...todo, active: !todo.active});
   }
