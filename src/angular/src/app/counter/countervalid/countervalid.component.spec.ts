@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CountervalidComponent } from './countervalid.component';
 
@@ -6,7 +6,7 @@ describe('CountervalidComponent', () => {
   let component: CountervalidComponent;
   let fixture: ComponentFixture<CountervalidComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CountervalidComponent ]
     })
