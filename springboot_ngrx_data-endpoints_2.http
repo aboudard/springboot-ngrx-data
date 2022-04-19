@@ -1,0 +1,19 @@
+###
+POST http://localhost:8080/upload/mixed
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="todo";
+Content-Type: application/json
+
+{"title":"popo","description":"popo","active":true,"dateTodo":"2022-04-15T10:37:21.356Z"}
+
+--boundary
+Content-Disposition: form-data; name="fileUpload"; filename="input.txt"
+
+< ./input.txt
+--boundary--
+###
+
+<> 2022-04-15T120658.400.txt
+<> 2022-04-15T120636.500.txt
