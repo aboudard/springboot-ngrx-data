@@ -21,7 +21,7 @@ export class FilterPipe implements PipeTransform {
     values.forEach(row => {
       let match = false;
       // find in all filters in the object of filters
-      for (const [key, value] of Object.entries(filter)) {
+      for (const [ key, value ] of Object.entries(filter)) {
         match = this.checkValue(row, key, value);
         if (!match) {
           return false;

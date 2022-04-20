@@ -1,4 +1,5 @@
 import { CalculePipe } from './calcule.pipe';
+
 let pipe: CalculePipe;
 describe('CalculePipe', () => {
   beforeEach(() => {

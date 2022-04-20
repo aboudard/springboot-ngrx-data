@@ -10,7 +10,7 @@ describe('FaInputComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ FaInputComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

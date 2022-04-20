@@ -5,11 +5,11 @@ import { FilesService } from './files.service';
 describe('FilesService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [FilesService]
+      providers: [ FilesService ]
     });
   });
 
-  it('should be created', inject([FilesService], (service: FilesService) => {
+  it('should be created', inject([ FilesService ], (service: FilesService) => {
     expect(service).toBeTruthy();
   }));
 });

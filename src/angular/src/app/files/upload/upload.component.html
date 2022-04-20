@@ -1,13 +1,14 @@
-<form [formGroup]="uploadForm" novalidate (submit)="submitFile()">
+<form (submit)="submitFile()" [formGroup]="uploadForm" novalidate>
 
   <div class="input-group mb-3">
     <div class="custom-file">
-      <input type="file" class="custom-file-input" formControlName="fileUpload" #tmpFile (change)="onFileChange($event.target.files)">
+      <input #tmpFile (change)="onFileChange($event.target.files)" class="custom-file-input" formControlName="fileUpload" type="file">
       <label class="custom-file-label" for="file">{{tmpFile.value != '' ? tmpFile.value : 'Choose file'}}</label>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary" value="Upload">
-    <fa-icon icon="upload"></fa-icon> Submit
+  <button class="btn btn-primary" type="submit" value="Upload">
+    <fa-icon icon="upload"></fa-icon>
+    Submit
   </button>
 
 </form>

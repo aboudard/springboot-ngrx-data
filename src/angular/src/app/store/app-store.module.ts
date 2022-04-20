@@ -23,4 +23,5 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
   ],
   declarations: []
 })
-export class AppStoreModule {}
+export class AppStoreModule {
+}

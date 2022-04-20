@@ -4,9 +4,10 @@ import { Directive, HostListener } from '@angular/core';
   selector: '[appInputRef]'
 })
 export class InputRefDirective {
-  constructor() {}
-
   focus = false;
+
+  constructor() {
+  }
 
   @HostListener('focus')
   onFocus() {

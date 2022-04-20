@@ -11,13 +11,14 @@ import { RouterModule } from '@angular/router';
  * Module des composants annexes non liés aux routes
  */
 @NgModule({
-  imports: [CommonModule, RouterModule, FontAwesomeModule],
+  imports: [ CommonModule, RouterModule, FontAwesomeModule ],
   declarations: [
     FaInputComponent,
     HelloComponent,
     NavbarComponent,
     FooterComponent
   ],
-  exports: [FaInputComponent, HelloComponent, NavbarComponent, FooterComponent]
+  exports: [ FaInputComponent, HelloComponent, NavbarComponent, FooterComponent ]
 })
-export class CompModule {}
+export class CompModule {
+}

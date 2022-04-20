@@ -1,26 +1,14 @@
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  Input,
-  OnInit,
-  OnDestroy
-} from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-hello',
   templateUrl: './hello.component.html',
-  styleUrls: ['./hello.component.scss'],
+  styleUrls: [ './hello.component.scss' ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HelloComponent implements OnInit, OnDestroy {
   @Input() user;
   count = 0;
-
-  get runChangeDetection() {
-    console.log('Checking the view');
-    return true;
-  }
 
   constructor(private cdr: ChangeDetectorRef) {
     setTimeout(() => {
@@ -29,7 +17,13 @@ export class HelloComponent implements OnInit, OnDestroy {
     }, 1000);
   }
 
-  ngOnInit() {}
+  get runChangeDetection() {
+    console.log('Checking the view');
+    return true;
+  }
+
+  ngOnInit() {
+  }
 
   ngOnDestroy(): void {
     this.cdr.detach();

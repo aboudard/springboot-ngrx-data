@@ -6,21 +6,23 @@
       <form (submit)="addTodo($event)">
         <div class="form-group">
           <label for="title">Todo title</label>
-          <app-fa-input [icon]="'fire'" class="form-control" (value)="onNewValue($event)">
-            <input appInputRef type="text" placeholder="Enter todo title" id="title" name="title" [(ngModel)]="todo.title" required aria-describedby="titleHelp">
+          <app-fa-input (value)="onNewValue($event)" [icon]="'fire'" class="form-control">
+            <input [(ngModel)]="todo.title" appInputRef aria-describedby="titleHelp" id="title" name="title" placeholder="Enter todo title" required type="text">
           </app-fa-input>
-          <small id="titleHelp" class="form-text text-muted">This is the sound of C.</small>
+          <small class="form-text text-muted" id="titleHelp">This is the sound of C.</small>
         </div>
         <div class="form-group">
           <label for="title">Todo description</label>
-          <app-fa-input [icon]="'comment-dots'" class="form-control" (value)="onNewValue($event)">
-            <input appInputRef type="text" placeholder="Enter todo description" id="description" name="description" [(ngModel)]="todo.description"
-              required aria-describedby="descriptionHelp">
+          <app-fa-input (value)="onNewValue($event)" [icon]="'comment-dots'" class="form-control">
+            <input [(ngModel)]="todo.description" appInputRef aria-describedby="descriptionHelp" id="description" name="description" placeholder="Enter todo description"
+              required type="text">
           </app-fa-input>
-          <small id="descriptionHelp" class="form-text text-muted">This is the new style of Music.</small>
+          <small class="form-text text-muted" id="descriptionHelp">This is the new style of Music.</small>
         </div>
-        <button type="submit" class="btn btn-primary">
-          <fa-icon icon="check"></fa-icon> Submit</button>
+        <button class="btn btn-primary" type="submit">
+          <fa-icon icon="check"></fa-icon>
+          Submit
+        </button>
       </form>
       <hr>
       <app-counter></app-counter>
@@ -40,7 +42,7 @@
       </div>
 
       <div class="alert alert-info mt-2">
-        <button class="btn btn-outline-primary" (click)="onClick()">Trigger change detection</button>
+        <button (click)="onClick()" class="btn btn-outline-primary">Trigger change detection</button>
       </div>
 
       <app-hello [user]="user"></app-hello>

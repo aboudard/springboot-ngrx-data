@@ -17,8 +17,9 @@ export function textFilter<T extends { title: string; description: string }>(
   entities: T[],
   pattern: string
 ) {
-  return PropsFilterFnFactory(['title', 'description'])(entities, pattern);
+  return PropsFilterFnFactory([ 'title', 'description' ])(entities, pattern);
 }
+
 /**
  * Fonction de comparaison pour trier les entities
  * @param {string} a
@@ -38,7 +39,9 @@ export const entityMetadata: EntityMetadataMap = {
     sortComparer: sortByTitle
   }
 };
+
 @NgModule({
-  imports: [EntityDataModule.forRoot({ entityMetadata: entityMetadata })]
+  imports: [ EntityDataModule.forRoot({ entityMetadata: entityMetadata }) ]
 })
-export class EntityStoreModule {}
+export class EntityStoreModule {
+}

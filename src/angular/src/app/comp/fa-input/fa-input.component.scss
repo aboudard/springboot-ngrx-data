@@ -6,9 +6,11 @@
   border: none;
   outline: none;
 }
+
 i {
   color: $input-focus-border-color;
 }
+
 :host(.focus) {
   color: $input-focus-color;
   background-color: $input-focus-bg;

@@ -6,7 +6,7 @@ import { Todo } from '../../dto/todo';
 @Component({
   selector: 'app-countervalid',
   templateUrl: './countervalid.component.html',
-  styleUrls: ['./countervalid.component.scss']
+  styleUrls: [ './countervalid.component.scss' ]
 })
 export class CountervalidComponent implements OnInit {
   filteredTodos$: Observable<Todo[]>;
@@ -16,5 +16,6 @@ export class CountervalidComponent implements OnInit {
     this.filteredTodos$ = this.todosService.filteredEntities$;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 }

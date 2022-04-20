@@ -6,7 +6,7 @@ import { FilesService } from '../../services/files.service';
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
-  styleUrls: ['./upload.component.scss']
+  styleUrls: [ './upload.component.scss' ]
 })
 export class UploadComponent implements OnInit {
   fileToUpload: File = null;
@@ -16,7 +16,8 @@ export class UploadComponent implements OnInit {
     private cd: ChangeDetectorRef,
     private filesService: FilesService,
     private toastrservice: ToastrService
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
     this.uploadForm = new FormGroup({

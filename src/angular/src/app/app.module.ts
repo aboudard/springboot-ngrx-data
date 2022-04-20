@@ -16,7 +16,7 @@ import { TodoModule } from './todo/todo.module';
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [ AppComponent ],
   imports: [
     CompModule,
     TodoModule,
@@ -39,6 +39,7 @@ import { TodoModule } from './todo/todo.module';
       provide: NgbDateParserFormatter, useClass: CustomDateParser
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {
+}

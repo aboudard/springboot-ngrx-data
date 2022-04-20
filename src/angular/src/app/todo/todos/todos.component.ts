@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-todos',
   templateUrl: './todos.component.html',
-  styleUrls: ['./todos.component.scss']
+  styleUrls: [ './todos.component.scss' ]
 })
 export class TodosComponent implements OnInit {
   title: String;
@@ -34,7 +34,7 @@ export class TodosComponent implements OnInit {
   updateTodo(todo: Todo) {
     // can't mutate the object directly since NgRx 10
     // todo.active = !todo.active;
-    this.todosService.update({...todo, active: !todo.active});
+    this.todosService.update({ ...todo, active: !todo.active });
   }
 
   ngOnInit() {
@@ -42,6 +42,6 @@ export class TodosComponent implements OnInit {
   }
 
   editTodo(id: number) {
-    this.router.navigate(['todopage', id]);
+    this.router.navigate([ 'todopage', id ]);
   }
 }

@@ -5,8 +5,9 @@ import { FilterPipe } from './filter.pipe';
 import { InputRefDirective } from './input-ref.directive';
 
 @NgModule({
-  imports: [CommonModule],
-  declarations: [InputRefDirective, FilterPipe, CalculePipe],
-  exports: [InputRefDirective, FilterPipe, CalculePipe]
+  imports: [ CommonModule ],
+  declarations: [ InputRefDirective, FilterPipe, CalculePipe ],
+  exports: [ InputRefDirective, FilterPipe, CalculePipe ]
 })
-export class SharedModule {}
+export class SharedModule {
+}

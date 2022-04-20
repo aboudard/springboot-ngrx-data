@@ -1,17 +1,10 @@
-import {
-  Component,
-  ContentChild,
-  EventEmitter,
-  HostBinding,
-  Input,
-  Output
-} from '@angular/core';
+import { Component, ContentChild, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 import { InputRefDirective } from '../../shared/input-ref.directive';
 
 @Component({
   selector: 'app-fa-input',
   templateUrl: './fa-input.component.html',
-  styleUrls: ['./fa-input.component.scss']
+  styleUrls: [ './fa-input.component.scss' ]
 })
 export class FaInputComponent {
   @Input() icon: string;

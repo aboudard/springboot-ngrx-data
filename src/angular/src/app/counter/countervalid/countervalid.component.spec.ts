@@ -10,7 +10,7 @@ describe('CountervalidComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ CountervalidComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

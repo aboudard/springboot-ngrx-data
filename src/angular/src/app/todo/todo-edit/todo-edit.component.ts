@@ -1,28 +1,30 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { map, switchMap, takeUntil, shareReplay } from 'rxjs/operators';
-import { Observable, combineLatest, Subject } from 'rxjs';
+import { map, shareReplay, takeUntil } from 'rxjs/operators';
+import { combineLatest, Observable, Subject } from 'rxjs';
 import { TodosService } from '../../services/todos.service';
 import { Todo } from '../../dto/todo';
-import {FormGroup, FormControl, Validators} from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-todo-edit',
   templateUrl: './todo-edit.component.html',
-  styleUrls: ['./todo-edit.component.scss']
+  styleUrls: [ './todo-edit.component.scss' ]
 })
 export class TodoEditComponent implements OnInit, OnDestroy {
   id$: Observable<any>;
   todo$: Observable<Todo>;
   todoForm: FormGroup;
   destroy$ = new Subject();
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private todosService: TodosService,
     private location: Location
-  ) {}
+  ) {
+  }
 
   validateForm(formGroup: FormGroup) {
     if (formGroup.get('title').value === '' && formGroup.get('description').value === '') {
@@ -43,10 +45,10 @@ export class TodoEditComponent implements OnInit, OnDestroy {
    */
   ngOnInit() {
     this.todo$ = combineLatest(
-      [this.route.paramMap.pipe(map(paramMap => paramMap.get('id'))),
-      this.todosService.entityMap$]
+      [ this.route.paramMap.pipe(map(paramMap => paramMap.get('id'))),
+        this.todosService.entityMap$ ]
     ).pipe(
-      map(([id, entityMap]) => {
+      map(([ id, entityMap ]) => {
         const todo = entityMap[id];
         if (!todo) {
           this.todosService.getByKey(id);
@@ -78,6 +80,7 @@ export class TodoEditComponent implements OnInit, OnDestroy {
     this.todosService.update(this.todoForm.value);
     this.close();
   }
+
   ngOnDestroy() {
     this.destroy$.next();
   }

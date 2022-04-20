@@ -5,11 +5,11 @@ import { ToastService } from './toast.service';
 describe('ToastServiceService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ToastService]
+      providers: [ ToastService ]
     });
   });
 
-  it('should be created', inject([ToastService], (service: ToastService) => {
+  it('should be created', inject([ ToastService ], (service: ToastService) => {
     expect(service).toBeTruthy();
   }));
 });

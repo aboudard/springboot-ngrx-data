@@ -10,7 +10,7 @@ import { ListComponent } from './list/list.component';
 
 
 @NgModule({
-  declarations: [FilesComponent, UploadComponent, ListComponent],
+  declarations: [ FilesComponent, UploadComponent, ListComponent ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -18,4 +18,5 @@ import { ListComponent } from './list/list.component';
     FilesRoutingModule
   ]
 })
-export class FilesModule { }
+export class FilesModule {
+}

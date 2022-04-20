@@ -30,6 +30,7 @@ import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
     CountervalidComponent,
     TodoEditComponent
   ],
-  exports: [TodosComponent]
+  exports: [ TodosComponent ]
 })
-export class TodoModule {}
+export class TodoModule {
+}

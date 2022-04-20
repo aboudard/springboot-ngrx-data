@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {Fileup} from "../dto/fileup";
+import { Fileup } from "../dto/fileup";
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,8 @@ export class FilesService {
 
   endpoint = '/upload/';
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) {
+  }
 
   postFile(fileToUpload: File): Observable<any> {
 
