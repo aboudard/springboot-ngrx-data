@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Fileup } from "../dto/fileup";
+import { Fileup } from '../dto/fileup';
 
 @Injectable({
   providedIn: 'root'

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FilesService } from "../../services/files.service";
-import { Observable } from "rxjs";
-import { Fileup } from "../../dto/fileup";
+import { FilesService } from '../../services/files.service';
+import { Observable } from 'rxjs';
+import { Fileup } from '../../dto/fileup';
 
 @Component({
   selector: 'app-list',

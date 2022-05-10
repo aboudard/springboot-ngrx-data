@@ -32,7 +32,7 @@ export class TodoEditComponent implements OnInit, OnDestroy {
         validateForm: {
           msg: 'Au moins un des champs doit être renseigné'
         }
-      }
+      };
     } else {
       return null;
     }
