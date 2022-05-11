@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TodosService } from '../services/todos.service';
 import { Observable } from 'rxjs';
 
@@ -7,13 +7,11 @@ import { Observable } from 'rxjs';
   templateUrl: './counter.component.html',
   styleUrls: [ './counter.component.scss' ]
 })
-export class CounterComponent implements OnInit {
+export class CounterComponent {
   counter$: Observable<number>;
 
   constructor(private todosService: TodosService) {
     this.counter$ = this.todosService.count$;
   }
 
-  ngOnInit() {
-  }
 }

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-hello',
@@ -6,7 +6,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy
   styleUrls: [ './hello.component.scss' ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HelloComponent implements OnInit, OnDestroy {
+export class HelloComponent implements OnDestroy {
   @Input() user;
   count = 0;
 
@@ -20,9 +20,6 @@ export class HelloComponent implements OnInit, OnDestroy {
   get runChangeDetection() {
     console.log('Checking the view');
     return true;
-  }
-
-  ngOnInit() {
   }
 
   ngOnDestroy(): void {

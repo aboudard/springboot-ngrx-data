@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TodosService } from '../../services/todos.service';
 import { Observable } from 'rxjs';
 import { Todo } from '../../dto/todo';
@@ -8,7 +8,7 @@ import { Todo } from '../../dto/todo';
   templateUrl: './countervalid.component.html',
   styleUrls: [ './countervalid.component.scss' ]
 })
-export class CountervalidComponent implements OnInit {
+export class CountervalidComponent {
   filteredTodos$: Observable<Todo[]>;
 
   constructor(private todosService: TodosService) {
@@ -16,6 +16,4 @@ export class CountervalidComponent implements OnInit {
     this.filteredTodos$ = this.todosService.filteredEntities$;
   }
 
-  ngOnInit() {
-  }
 }
