@@ -4,7 +4,7 @@ import { map, shareReplay, takeUntil } from 'rxjs/operators';
 import { combineLatest, Observable, Subject } from 'rxjs';
 import { TodosService } from '../../services/todos.service';
 import { Todo } from '../../dto/todo';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Location } from '@angular/common';
 
 @Component({
@@ -15,7 +15,7 @@ import { Location } from '@angular/common';
 export class TodoEditComponent implements OnInit, OnDestroy {
   id$: Observable<any>;
   todo$: Observable<Todo>;
-  todoForm: FormGroup;
+  todoForm: UntypedFormGroup;
   destroy$ = new Subject();
 
   constructor(
@@ -26,7 +26,7 @@ export class TodoEditComponent implements OnInit, OnDestroy {
   ) {
   }
 
-  validateForm(formGroup: FormGroup) {
+  validateForm(formGroup: UntypedFormGroup) {
     if (formGroup.get('title').value === '' && formGroup.get('description').value === '') {
       return {
         validateForm: {
@@ -59,13 +59,13 @@ export class TodoEditComponent implements OnInit, OnDestroy {
       shareReplay(1)
     );
 
-    this.todoForm = new FormGroup({
-      title: new FormControl(),
-      description: new FormControl(),
-      active: new FormControl(),
-      dateTodo: new FormControl(),
-      id: new FormControl()
-    }, (formGroup: FormGroup) => {
+    this.todoForm = new UntypedFormGroup({
+      title: new UntypedFormControl(),
+      description: new UntypedFormControl(),
+      active: new UntypedFormControl(),
+      dateTodo: new UntypedFormControl(),
+      id: new UntypedFormControl()
+    }, (formGroup: UntypedFormGroup) => {
       return this.validateForm(formGroup);
     });
 

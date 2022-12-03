@@ -107,7 +107,6 @@
       }
     }
   },
-  "defaultProject": "ngrxdata",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",

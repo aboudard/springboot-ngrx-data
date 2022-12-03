@@ -1,6 +1,6 @@
-@import '~bootstrap/scss/functions';
+@import '../../../../node_modules/bootstrap/scss/functions';
 @import "../../../assets/variables.scss";
-@import "~bootstrap/scss/variables";
+@import "../../../../node_modules/bootstrap/scss/variables";
 
 :host ::ng-deep input {
   border: none;

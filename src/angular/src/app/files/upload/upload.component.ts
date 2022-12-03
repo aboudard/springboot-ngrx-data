@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { FilesService } from '../../services/files.service';
 
@@ -10,7 +10,7 @@ import { FilesService } from '../../services/files.service';
 })
 export class UploadComponent implements OnInit {
   fileToUpload: File = null;
-  uploadForm: FormGroup;
+  uploadForm: UntypedFormGroup;
 
   constructor(
     private cd: ChangeDetectorRef,
@@ -20,8 +20,8 @@ export class UploadComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.uploadForm = new FormGroup({
-      fileUpload: new FormControl('', Validators.required)
+    this.uploadForm = new UntypedFormGroup({
+      fileUpload: new UntypedFormControl('', Validators.required)
     });
   }
 
