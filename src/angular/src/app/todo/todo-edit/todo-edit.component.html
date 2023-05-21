@@ -1,44 +1,47 @@
-<div class="container">
-  <form (ngSubmit)="saveTodo()" [formGroup]="todoForm" novalidate>
-    <div class="form-group">
-      <label for="todoTitle">Todo title</label>
-      <input aria-describedby="titleHelp" class="form-control" formControlName="title" id="todoTitle" placeholder="Enter title"
-        type="text">
-      <small class="form-text text-muted" id="titleHelp">This is the sound of C.</small>
-      <input formControlName="id" type="hidden">
-    </div>
-    <div class="form-group">
-      <label for="todoDescription">Todo description</label>
-      <input class="form-control" formControlName="description" id="todoDescription" placeholder="Enter description"
-        type="text">
-    </div>
-    <div class="form-group">
-      <label for="">Date due</label>
-      <div class="input-group">
-        <input #d="ngbDatepicker" class="form-control" formControlName="dateTodo" name="dp" ngbDatepicker
-          placeholder="yyyy-mm-dd">
-        <div class="input-group-append">
-          <button (click)="d.toggle()" class="btn btn-outline-secondary calendar" type="button">
-            <fa-icon icon="calendar"></fa-icon>
-          </button>
+<ng-container *ngIf="todo$ | async as todo">
+  <div class="container">
+    <form (ngSubmit)="saveTodo()" [formGroup]="todoForm" novalidate>
+      <div class="form-group">
+        <label for="todoTitle">Todo title</label>
+        <input aria-describedby="titleHelp" class="form-control" formControlName="title" id="todoTitle" placeholder="Enter title"
+          type="text">
+        <small class="form-text text-muted" id="titleHelp">This is the sound of C.</small>
+        <input formControlName="id" type="hidden">
+      </div>
+      <div class="form-group">
+        <label for="todoDescription">Todo description</label>
+        <input class="form-control" formControlName="description" id="todoDescription" placeholder="Enter description"
+          type="text">
+      </div>
+      <div class="form-group">
+        <label for="">Date due</label>
+        <div class="input-group">
+          <input #d="ngbDatepicker" class="form-control" formControlName="dateTodo" name="dp" ngbDatepicker
+            placeholder="yyyy-mm-dd">
+          <div class="input-group-append">
+            <button (click)="d.toggle()" class="btn btn-outline-secondary calendar" type="button">
+              <fa-icon icon="calendar"></fa-icon>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="form-group">
-      <div class="form-check abc-checkbox abc-checkbox-primary">
-        <input class="form-check-input" formControlName="active" id="todoActive" type="checkbox">
-        <label class="form-check-label" for="todoActive">
-          Active
-        </label>
+      <div class="form-group">
+        <div class="form-check abc-checkbox abc-checkbox-primary">
+          <input class="form-check-input" formControlName="active" id="todoActive" type="checkbox">
+          <label class="form-check-label" for="todoActive">
+            Active
+          </label>
+        </div>
       </div>
-    </div>
-    <div *ngIf="todoForm.invalid" class="alert alert-warning">
-      {{todoForm.errors?.validateForm.msg}}
-    </div>
+      <div *ngIf="todoForm.invalid" class="alert alert-warning">
+        {{todoForm.errors?.validateForm.msg}}
+      </div>
 
-    <button [disabled]="todoForm.invalid || todoForm.pristine" class="btn btn-primary" type="submit">
-      <fa-icon icon="check"></fa-icon>
-      Submit
-    </button>
-  </form>
-</div>
+      <button [disabled]="todoForm.invalid || todoForm.pristine" class="btn btn-primary" type="submit">
+        <fa-icon icon="check"></fa-icon>
+        Submit
+      </button>
+    </form>
+  </div>
+</ng-container>
+

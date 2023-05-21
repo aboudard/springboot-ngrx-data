@@ -4,7 +4,7 @@ import { map, shareReplay, takeUntil } from 'rxjs/operators';
 import { combineLatest, Observable, Subject } from 'rxjs';
 import { TodosService } from '../../services/todos.service';
 import { Todo } from '../../dto/todo';
-import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { FormControl, FormGroup, UntypedFormGroup } from '@angular/forms';
 import { Location } from '@angular/common';
 
 @Component({
@@ -15,7 +15,13 @@ import { Location } from '@angular/common';
 export class TodoEditComponent implements OnInit, OnDestroy {
   id$: Observable<any>;
   todo$: Observable<Todo>;
-  todoForm: UntypedFormGroup;
+  todoForm: FormGroup<{
+    id: FormControl<number>,
+    title: FormControl<string>,
+    description: FormControl<string>,
+    active: FormControl<boolean>,
+    dateTodo: FormControl<Date>
+  }>;
   destroy$ = new Subject();
 
   constructor(
@@ -26,7 +32,7 @@ export class TodoEditComponent implements OnInit, OnDestroy {
   ) {
   }
 
-  validateForm(formGroup: UntypedFormGroup) {
+  validateForm(formGroup: FormGroup) {
     if (formGroup.get('title').value === '' && formGroup.get('description').value === '') {
       return {
         validateForm: {
@@ -53,27 +59,23 @@ export class TodoEditComponent implements OnInit, OnDestroy {
         if (!todo) {
           this.todosService.getByKey(id);
         }
+        this.todoForm.patchValue(todo);
         return todo;
       }),
       takeUntil(this.destroy$), // must be just before shareReplay
       shareReplay(1)
     );
 
-    this.todoForm = new UntypedFormGroup({
-      title: new UntypedFormControl(),
-      description: new UntypedFormControl(),
-      active: new UntypedFormControl(),
-      dateTodo: new UntypedFormControl(),
-      id: new UntypedFormControl()
-    }, (formGroup: UntypedFormGroup) => {
+    this.todoForm = new FormGroup({
+      title: new FormControl(''),
+      description: new FormControl(),
+      active: new FormControl(),
+      dateTodo: new FormControl(),
+      id: new FormControl()
+    }, (formGroup: FormGroup) => {
       return this.validateForm(formGroup);
     });
 
-    this.todo$.subscribe((todo: Todo) => {
-      if (todo) {
-        this.todoForm.patchValue(todo);
-      }
-    });
   }
 
   saveTodo() {
