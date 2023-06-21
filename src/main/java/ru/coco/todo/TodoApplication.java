@@ -24,7 +24,7 @@ public class TodoApplication {
 	@Bean
 	InitializingBean sendDatabase() {
 		return () -> {
-			todoRepository.save(new Todo("John", "the life of Rambo", true, new TodoCategory("Recettes"), new Date()));
+			todoRepository.save(new Todo("John", "the life of Rambo", false, new TodoCategory("Recettes"), new Date()));
 			todoRepository.save(new Todo("Billy", "the Kid", true, new TodoCategory("Western"), new Date()));
 		};
 	}
