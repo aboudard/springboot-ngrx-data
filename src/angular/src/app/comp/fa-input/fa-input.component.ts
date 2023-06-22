@@ -1,5 +1,6 @@
 import { Component, ContentChild, EventEmitter, HostBinding, Input, Output } from '@angular/core';
-import { InputRefDirective } from '../../shared/input-ref.directive';
+import { InputRefDirective } from '../../shared/input-ref/input-ref.directive';
+
 
 @Component({
   selector: 'app-fa-input',
