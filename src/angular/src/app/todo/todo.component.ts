@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { TodosService } from '../services/todos.service';
 import { Todo } from '../dto/todo';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-todo',
@@ -13,21 +14,24 @@ export class TodoComponent implements OnInit {
   todo: Todo;
   user = { name: 'Bill' };
   loading$: Observable<boolean>;
+  todoFormGroup = new FormGroup({
+    title: new FormControl('', Validators.required),
+    description: new FormControl('', Validators.required)
+  });
 
-  constructor(private todosService: TodosService) {
+  private todosService: TodosService
+
+  constructor() {
+    this.todosService = inject(TodosService);
     this.loading$ = this.todosService.loading$;
   }
 
   ngOnInit() {
     this.todo = { title: '', description: '', active: true, dateTodo: new Date() };
-    this.loading$.subscribe(isLoading => {
-      console.log('loading : ' + isLoading);
-    });
   }
 
-  addTodo(event: Event) {
-    event.preventDefault();
-    this.todosService.add(this.todo);
+  addTodo() {
+    this.todosService.add({ ...this.todo, ...this.todoFormGroup.value } as Todo);
   }
 
   onClick() {

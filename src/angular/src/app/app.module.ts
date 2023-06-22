@@ -12,14 +12,12 @@ import { CompModule } from './comp/comp.module';
 import { CustomAdapter } from './shared/custom-adapter';
 import { CustomDateParser } from './shared/custom-date-parser';
 import { AppStoreModule } from './store/app-store.module';
-import { TodoModule } from './todo/todo.module';
 
 
 @NgModule({
   declarations: [ AppComponent ],
   imports: [
     CompModule,
-    TodoModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

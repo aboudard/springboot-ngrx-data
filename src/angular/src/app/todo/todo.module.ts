@@ -11,6 +11,7 @@ import { CompModule } from '../comp/comp.module';
 import { TodoEditComponent } from './todo-edit/todo-edit.component';
 import { RouterModule } from '@angular/router';
 import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
+import { TodoRoutingModule } from './todo.routing.module';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
     CompModule,
     RouterModule,
     FontAwesomeModule,
-    NgbDatepickerModule
+    NgbDatepickerModule,
+    TodoRoutingModule
   ],
   declarations: [
     TodosComponent,

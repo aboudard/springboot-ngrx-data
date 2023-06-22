@@ -27,7 +27,7 @@
     {
       "title": "Beer is not my first name",
       "description": "autre truc",
-      "active": null,
+      "active": false,
       "id": 4
     },
     {
@@ -40,12 +40,6 @@
       "title": "Do something about it",
       "id": 8,
       "active": true
-    },
-    {
-      "title": "test meuh",
-      "description": "er ererererer er e rer ererer er",
-      "active": true,
-      "id": 9
     }
   ]
 }

@@ -3,24 +3,24 @@
   <div class="row">
     <div class="col-lg-3">
       <h5>Add a Todo : </h5>
-      <form (submit)="addTodo($event)">
+      <form [formGroup]="todoFormGroup" (submit)="addTodo()">
         <div class="form-group">
           <label for="title">Todo title</label>
           <app-fa-input (value)="onNewValue($event)" [icon]="'fire'" class="form-control">
-            <input [(ngModel)]="todo.title" appInputRef aria-describedby="titleHelp" id="title" name="title" placeholder="Enter todo title" required type="text">
+            <input formControlName="title" appInputRef aria-describedby="titleHelp" id="title" name="title" placeholder="Enter todo title" required type="text">
           </app-fa-input>
           <small class="form-text text-muted" id="titleHelp">This is the sound of C.</small>
         </div>
         <div class="form-group">
           <label for="title">Todo description</label>
           <app-fa-input (value)="onNewValue($event)" [icon]="'comment-dots'" class="form-control">
-            <input [(ngModel)]="todo.description" appInputRef aria-describedby="descriptionHelp" id="description" name="description" placeholder="Enter todo description"
+            <input formControlName="description" appInputRef aria-describedby="descriptionHelp" id="description" name="description" placeholder="Enter todo description"
               required type="text">
           </app-fa-input>
           <small class="form-text text-muted" id="descriptionHelp">This is the new style of Music.</small>
         </div>
-        <button class="btn btn-primary" type="submit">
-          <fa-icon icon="check"></fa-icon>
+        <button [disabled]="todoFormGroup.invalid" class="btn btn-primary" type="submit">
+          <fa-icon [icon]="(loading$ | async) ? 'spinner' : 'check'" [spin]="loading$ | async"></fa-icon>
           Submit
         </button>
       </form>

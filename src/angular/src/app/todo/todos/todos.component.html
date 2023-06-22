@@ -1,54 +1,54 @@
 <table class="table table-hover table-bordered">
   <thead class="thead-light">
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">Title</th>
-    <th scope="col">Description</th>
-    <th>&nbsp;</th>
-  </tr>
-  <tr>
-    <th></th>
-    <th>
-      <div class="input-group input-group-sm">
-        <input [(ngModel)]="title" class="form-control" name="title" type="text">
-      </div>
-    </th>
-    <th>
-      <div class="input-group input-group-sm">
-        <input [(ngModel)]="description" class="form-control" name="description" type="text">
-      </div>
-    </th>
-    <th>&nbsp;</th>
-  </tr>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th>&nbsp;</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>
+        <div class="input-group input-group-sm">
+          <input [(ngModel)]="title" class="form-control" name="title" type="text">
+        </div>
+      </th>
+      <th>
+        <div class="input-group input-group-sm">
+          <input [(ngModel)]="description" class="form-control" name="description" type="text">
+        </div>
+      </th>
+      <th>&nbsp;</th>
+    </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let todo of (todos$ | async) | filterPipe:{title: title, description: description}; let i = index">
-    <th scope="row">
-      <span [innerText]="todo.id"></span>
-    </th>
-    <td>
-      <span [innerText]="todo.title"></span>
-    </td>
-    <td>
-      <span [innerText]="todo.description"></span> / {{testModel()}}
-    </td>
-    <td>
+    <tr *ngFor="let todo of (todos$ | async) | filterPipe:{title: title, description: description}; let i = index">
+      <th scope="row">
+        <span [innerText]="todo.id"></span>
+      </th>
+      <td>
+        <span [innerText]="todo.title"></span>
+      </td>
+      <td>
+        <span [innerText]="todo.description"></span> / {{testModel()}}
+      </td>
+      <td>
 
-      <div aria-label="Actions" class="btn-group" role="group">
-        <button (click)="editTodo(todo.id)" class="btn btn-outline-secondary" type="button">
-          <fa-icon icon="pencil"></fa-icon>
-        </button>
-        <button (click)="deleteTodo(todo.id)" class="btn btn-outline-secondary" type="button">
-          <fa-icon class="text-danger" icon="trash"></fa-icon>
-        </button>
-        <button (click)="updateTodo(todo)" class="btn btn-outline-secondary" type="button">
-          <fa-icon *ngIf="todo.active" class="text-info" icon="square-check"></fa-icon>
-          <fa-icon *ngIf="!todo.active" class="text-secondary" icon="square"></fa-icon>
-        </button>
-      </div>
+        <div aria-label="Actions" class="btn-group btn-group-sm" role="group">
+          <button (click)="editTodo(todo.id)" class="btn btn-primary" type="button">
+            <fa-icon icon="pencil"></fa-icon>
+          </button>
+          <button (click)="deleteTodo(todo.id)" class="btn btn-outline-secondary" type="button">
+            <fa-icon class="text-danger" icon="trash"></fa-icon>
+          </button>
+          <button (click)="updateTodo(todo)" class="btn btn-outline-secondary" type="button">
+            <fa-icon *ngIf="todo.active" class="text-info" icon="square-check"></fa-icon>
+            <fa-icon *ngIf="!todo.active" class="text-secondary" icon="square"></fa-icon>
+          </button>
+        </div>
 
-    </td>
-  </tr>
+      </td>
+    </tr>
 
   </tbody>
 </table>

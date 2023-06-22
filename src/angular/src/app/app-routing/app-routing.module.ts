@@ -1,33 +1,36 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
 
-import { TodoComponent } from '../todo/todo.component';
-import { TodoEditComponent } from '../todo/todo-edit/todo-edit.component';
+import { TodoComponent } from "../todo/todo.component";
+import { TodoEditComponent } from "../todo/todo-edit/todo-edit.component";
 
 const routes: Routes = [
   {
-    path: 'files',
-    loadChildren: () => import('../files/files.module').then(m => m.FilesModule)
+    path: "files",
+    loadChildren: () =>
+      import("../files/files.module").then((m) => m.FilesModule),
+    title: "File management",
   },
   {
-    path: 'todopage',
-    component: TodoComponent
+    path: "todo",
+    loadChildren: () => import("../todo/todo.module").then((m) => m.TodoModule),
+    title: "Todo management",
   },
   {
-    path: 'todopage/:id',
-    component: TodoEditComponent
+    path: "",
+    redirectTo: "todo",
+    pathMatch: "full",
   },
-  {
-    path: '',
-    redirectTo: 'todopage',
-    pathMatch: 'full'
-  },
-  { path: '**', redirectTo: 'todopage' }
+  { path: "**", redirectTo: "todo" },
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes, { useHash: true, relativeLinkResolution: 'legacy' }) ],
-  exports: [ RouterModule ]
+  imports: [
+    RouterModule.forRoot(routes, {
+      useHash: true,
+      relativeLinkResolution: "legacy",
+    }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

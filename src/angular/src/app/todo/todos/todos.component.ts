@@ -1,26 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-import { TodosService } from '../../services/todos.service';
-import { Observable } from 'rxjs';
-import { Todo } from '../../dto/todo';
-import { Router } from '@angular/router';
+import { Component, OnInit, inject } from "@angular/core";
+import { TodosService } from "../../services/todos.service";
+import { Observable } from "rxjs";
+import { Todo } from "../../dto/todo";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-todos',
-  templateUrl: './todos.component.html',
-  styleUrls: [ './todos.component.scss' ]
+  selector: "app-todos",
+  templateUrl: "./todos.component.html",
+  styleUrls: ["./todos.component.scss"],
 })
 export class TodosComponent implements OnInit {
   title: String;
   description: String;
+
   todos$: Observable<Todo[]>;
 
-  constructor(private todosService: TodosService, private router: Router) {
-    this.todos$ = todosService.entities$;
+  private todosService: TodosService;
+  private router: Router;
+
+  constructor() {
+    this.router = inject(Router);
+    this.todosService = inject(TodosService);
+    this.todos$ = this.todosService.entities$;
   }
 
   testModel() {
-    console.log('update');
-    return '12';
+    console.log("update");
+    return "12";
   }
 
   getTodos() {
@@ -42,6 +48,6 @@ export class TodosComponent implements OnInit {
   }
 
   editTodo(id: number) {
-    this.router.navigate([ 'todopage', id ]);
+    this.router.navigate(["view", id]);
   }
 }

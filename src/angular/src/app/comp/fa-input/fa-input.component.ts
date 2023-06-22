@@ -7,8 +7,11 @@ import { InputRefDirective } from '../../shared/input-ref.directive';
   styleUrls: [ './fa-input.component.scss' ]
 })
 export class FaInputComponent {
+
   @Input() icon: string;
+
   @Output() value = new EventEmitter<string>();
+  
   inputFocus = false;
 
   @ContentChild(InputRefDirective) input: InputRefDirective;
