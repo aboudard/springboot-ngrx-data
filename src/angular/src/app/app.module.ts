@@ -12,6 +12,8 @@ import { CompModule } from './comp/comp.module';
 import { CustomAdapter } from './shared/custom-adapter';
 import { CustomDateParser } from './shared/custom-date-parser';
 import { AppStoreModule } from './store/app-store.module';
+import { TitleStrategy } from '@angular/router';
+import { TemplatePageTitleStrategy } from './services/template-page-title-strategy';
 
 
 @NgModule({
@@ -35,6 +37,9 @@ import { AppStoreModule } from './store/app-store.module';
     },
     {
       provide: NgbDateParserFormatter, useClass: CustomDateParser
+    },
+    {
+      provide: TitleStrategy, useClass: TemplatePageTitleStrategy
     }
   ],
   bootstrap: [ AppComponent ]
