@@ -50,6 +50,16 @@ mvn spring-boot:start
 
 Open your localhost http://localhost:8080
 
+## Running with the Angular CLI and Spring Boot
+
+If you want to run the Angular CLI and Spring Boot server separately, you can do that with two terminals.
+The Angular server will run on port 4200 and the Spring Boot server will run on port 8081.
+```bash
+cd src/angular
+npm run start:sb
+```
+
+
 ## Alternative with json-server
 If you want to use the json server mock database just follow these instructions :
 - Install json-server
@@ -61,7 +71,7 @@ npm install -g json-server
 - Run the commands :
 ```bash
 cd src/angular
-npm run start
+npm run start:json
 npm run dbmock
 ```
 
