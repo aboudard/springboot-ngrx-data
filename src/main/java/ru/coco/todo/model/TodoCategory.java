@@ -2,7 +2,7 @@ package ru.coco.todo.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Collection;
 import java.util.Set;
 
