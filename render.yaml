@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: todo-backend
+    runtime: docker
+    plan: free
+    branch: master
+    healthCheckPath: /admin/health
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: APP_CORS_ALLOWED_ORIGINS
+        value: https://aboudard.github.io
+      - key: JAVA_TOOL_OPTIONS
+        value: -XX:MaxRAMPercentage=70 -XX:+UseSerialGC
+      - key: STORAGE_LOCATION
+        value: /tmp/storage
